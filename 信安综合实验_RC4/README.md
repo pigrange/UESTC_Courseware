@@ -130,7 +130,7 @@ void writePlaintext(vector<uint8_t> msg, const char *filepath) {}
 
 **加密前：**
 
-![1564576778102](./pics/1564576778102.png)
+![img](./pics/1564576778102.png)
 
 
 
