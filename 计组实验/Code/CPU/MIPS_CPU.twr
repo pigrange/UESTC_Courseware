@@ -1,0 +1,1144 @@
+--------------------------------------------------------------------------------
+Release 14.7 Trace  (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+D:\Tools\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\trce.exe -intstyle ise -v 3
+-s 3 -n 3 -fastpaths -xml MIPS_CPU.twx MIPS_CPU.ncd -o MIPS_CPU.twr
+MIPS_CPU.pcf
+
+Design file:              MIPS_CPU.ncd
+Physical constraint file: MIPS_CPU.pcf
+Device,package,speed:     xc6slx45,csg484,C,-3 (PRODUCTION 1.23 2013-10-13)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:2698 - No timing constraints found, doing default enumeration.
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Setup/Hold to clock Clock
+---------------+------------+------------+------------+------------+------------------+--------+
+               |Max Setup to|  Process   |Max Hold to |  Process   |                  | Clock  |
+Source         | clk (edge) |   Corner   | clk (edge) |   Corner   |Internal Clock(s) | Phase  |
+---------------+------------+------------+------------+------------+------------------+--------+
+DataToWrite<0> |    2.891(R)|      SLOW  |   -1.902(R)|      FAST  |Clock_BUFGP       |   0.000|
+DataToWrite<1> |    2.747(R)|      SLOW  |   -0.951(R)|      SLOW  |Clock_BUFGP       |   0.000|
+DataToWrite<2> |    2.705(R)|      SLOW  |   -0.938(R)|      SLOW  |Clock_BUFGP       |   0.000|
+DataToWrite<3> |    2.422(R)|      SLOW  |   -0.738(R)|      SLOW  |Clock_BUFGP       |   0.000|
+DataToWrite<4> |    2.873(R)|      SLOW  |   -1.992(R)|      FAST  |Clock_BUFGP       |   0.000|
+DataToWrite<5> |    2.676(R)|      SLOW  |   -0.804(R)|      SLOW  |Clock_BUFGP       |   0.000|
+DataToWrite<6> |    2.269(R)|      SLOW  |   -1.422(R)|      FAST  |Clock_BUFGP       |   0.000|
+DataToWrite<7> |    2.317(R)|      SLOW  |   -1.197(R)|      SLOW  |Clock_BUFGP       |   0.000|
+DataToWrite<8> |    2.056(R)|      SLOW  |   -1.364(R)|      SLOW  |Clock_BUFGP       |   0.000|
+DataToWrite<9> |    2.097(R)|      SLOW  |   -1.323(R)|      FAST  |Clock_BUFGP       |   0.000|
+DataToWrite<10>|    1.795(R)|      SLOW  |   -1.119(R)|      SLOW  |Clock_BUFGP       |   0.000|
+DataToWrite<11>|    1.943(R)|      SLOW  |   -0.829(R)|      SLOW  |Clock_BUFGP       |   0.000|
+DataToWrite<12>|    2.671(R)|      SLOW  |   -1.330(R)|      FAST  |Clock_BUFGP       |   0.000|
+DataToWrite<13>|    2.509(R)|      SLOW  |   -1.550(R)|      FAST  |Clock_BUFGP       |   0.000|
+DataToWrite<14>|    2.202(R)|      SLOW  |   -1.250(R)|      SLOW  |Clock_BUFGP       |   0.000|
+DataToWrite<15>|    2.395(R)|      SLOW  |   -1.259(R)|      FAST  |Clock_BUFGP       |   0.000|
+DataToWrite<16>|    2.808(R)|      SLOW  |   -1.439(R)|      FAST  |Clock_BUFGP       |   0.000|
+DataToWrite<17>|    2.634(R)|      SLOW  |   -1.428(R)|      FAST  |Clock_BUFGP       |   0.000|
+DataToWrite<18>|    1.861(R)|      SLOW  |   -0.574(R)|      SLOW  |Clock_BUFGP       |   0.000|
+DataToWrite<19>|    1.326(R)|      SLOW  |   -0.484(R)|      SLOW  |Clock_BUFGP       |   0.000|
+DataToWrite<20>|    1.478(R)|      SLOW  |   -0.480(R)|      SLOW  |Clock_BUFGP       |   0.000|
+DataToWrite<21>|    1.403(R)|      SLOW  |   -0.444(R)|      SLOW  |Clock_BUFGP       |   0.000|
+DataToWrite<22>|    1.374(R)|      SLOW  |   -0.380(R)|      SLOW  |Clock_BUFGP       |   0.000|
+DataToWrite<23>|    1.263(R)|      SLOW  |   -0.106(R)|      SLOW  |Clock_BUFGP       |   0.000|
+DataToWrite<24>|    2.026(R)|      SLOW  |   -1.168(R)|      SLOW  |Clock_BUFGP       |   0.000|
+DataToWrite<25>|    1.694(R)|      SLOW  |   -0.928(R)|      SLOW  |Clock_BUFGP       |   0.000|
+DataToWrite<26>|    1.592(R)|      SLOW  |   -0.744(R)|      SLOW  |Clock_BUFGP       |   0.000|
+DataToWrite<27>|    1.469(R)|      SLOW  |   -0.933(R)|      SLOW  |Clock_BUFGP       |   0.000|
+DataToWrite<28>|    1.641(R)|      SLOW  |   -0.772(R)|      SLOW  |Clock_BUFGP       |   0.000|
+DataToWrite<29>|    1.804(R)|      SLOW  |   -0.781(R)|      SLOW  |Clock_BUFGP       |   0.000|
+DataToWrite<30>|    1.519(R)|      SLOW  |   -0.650(R)|      SLOW  |Clock_BUFGP       |   0.000|
+DataToWrite<31>|    1.444(R)|      SLOW  |   -0.626(R)|      SLOW  |Clock_BUFGP       |   0.000|
+Instruction<0> |   11.739(R)|      SLOW  |   -2.638(R)|      FAST  |Clock_BUFGP       |   0.000|
+Instruction<1> |   11.706(R)|      SLOW  |   -2.976(R)|      FAST  |Clock_BUFGP       |   0.000|
+Instruction<2> |   11.957(R)|      SLOW  |   -2.869(R)|      FAST  |Clock_BUFGP       |   0.000|
+Instruction<3> |    8.217(R)|      SLOW  |   -2.400(R)|      FAST  |Clock_BUFGP       |   0.000|
+Instruction<4> |    8.823(R)|      SLOW  |   -3.101(R)|      FAST  |Clock_BUFGP       |   0.000|
+Instruction<5> |    8.643(R)|      SLOW  |   -2.774(R)|      FAST  |Clock_BUFGP       |   0.000|
+Instruction<6> |    8.803(R)|      SLOW  |   -2.786(R)|      FAST  |Clock_BUFGP       |   0.000|
+Instruction<7> |    8.297(R)|      SLOW  |   -2.819(R)|      FAST  |Clock_BUFGP       |   0.000|
+Instruction<8> |    8.757(R)|      SLOW  |   -2.914(R)|      FAST  |Clock_BUFGP       |   0.000|
+Instruction<9> |    7.976(R)|      SLOW  |   -2.888(R)|      FAST  |Clock_BUFGP       |   0.000|
+Instruction<10>|    8.697(R)|      SLOW  |   -2.749(R)|      FAST  |Clock_BUFGP       |   0.000|
+Instruction<11>|    8.636(R)|      SLOW  |   -1.178(R)|      FAST  |Clock_BUFGP       |   0.000|
+Instruction<12>|    8.507(R)|      SLOW  |   -1.121(R)|      FAST  |Clock_BUFGP       |   0.000|
+Instruction<13>|    8.644(R)|      SLOW  |   -1.296(R)|      FAST  |Clock_BUFGP       |   0.000|
+Instruction<14>|    8.230(R)|      SLOW  |   -0.610(R)|      SLOW  |Clock_BUFGP       |   0.000|
+Instruction<15>|    9.661(R)|      SLOW  |   -0.948(R)|      SLOW  |Clock_BUFGP       |   0.000|
+Instruction<16>|   10.601(R)|      SLOW  |   -0.931(R)|      SLOW  |Clock_BUFGP       |   0.000|
+Instruction<17>|   10.920(R)|      SLOW  |   -1.138(R)|      FAST  |Clock_BUFGP       |   0.000|
+Instruction<18>|   10.691(R)|      SLOW  |   -1.523(R)|      FAST  |Clock_BUFGP       |   0.000|
+Instruction<19>|   10.631(R)|      SLOW  |   -1.365(R)|      FAST  |Clock_BUFGP       |   0.000|
+Instruction<20>|   10.191(R)|      SLOW  |   -1.069(R)|      SLOW  |Clock_BUFGP       |   0.000|
+Instruction<21>|   10.720(R)|      SLOW  |   -3.589(R)|      FAST  |Clock_BUFGP       |   0.000|
+Instruction<22>|   12.125(R)|      SLOW  |   -4.310(R)|      FAST  |Clock_BUFGP       |   0.000|
+Instruction<23>|   12.272(R)|      SLOW  |   -4.264(R)|      FAST  |Clock_BUFGP       |   0.000|
+Instruction<24>|   13.230(R)|      SLOW  |   -4.145(R)|      FAST  |Clock_BUFGP       |   0.000|
+Instruction<25>|   12.468(R)|      SLOW  |   -3.971(R)|      FAST  |Clock_BUFGP       |   0.000|
+Instruction<26>|   11.971(R)|      SLOW  |   -1.700(R)|      FAST  |Clock_BUFGP       |   0.000|
+Instruction<27>|   15.088(R)|      SLOW  |   -1.552(R)|      FAST  |Clock_BUFGP       |   0.000|
+Instruction<28>|   11.503(R)|      SLOW  |   -1.362(R)|      FAST  |Clock_BUFGP       |   0.000|
+Instruction<29>|   17.964(R)|      SLOW  |   -1.769(R)|      FAST  |Clock_BUFGP       |   0.000|
+Instruction<30>|   11.511(R)|      SLOW  |   -1.372(R)|      FAST  |Clock_BUFGP       |   0.000|
+Instruction<31>|   11.698(R)|      SLOW  |   -1.521(R)|      FAST  |Clock_BUFGP       |   0.000|
+Reset          |    5.763(R)|      SLOW  |   -1.680(R)|      FAST  |Clock_BUFGP       |   0.000|
+---------------+------------+------------+------------+------------+------------------+--------+
+
+Clock Clock to Pad
+--------------+-----------------+------------+-----------------+------------+------------------+--------+
+              |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                  | Clock  |
+Destination   |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s) | Phase  |
+--------------+-----------------+------------+-----------------+------------+------------------+--------+
+ALU_result<0> |        11.633(R)|      SLOW  |         6.059(R)|      FAST  |Clock_BUFGP       |   0.000|
+ALU_result<1> |        11.462(R)|      SLOW  |         5.853(R)|      FAST  |Clock_BUFGP       |   0.000|
+ALU_result<2> |        11.821(R)|      SLOW  |         5.980(R)|      FAST  |Clock_BUFGP       |   0.000|
+ALU_result<3> |        12.017(R)|      SLOW  |         5.944(R)|      FAST  |Clock_BUFGP       |   0.000|
+ALU_result<4> |        12.346(R)|      SLOW  |         5.966(R)|      FAST  |Clock_BUFGP       |   0.000|
+ALU_result<5> |        12.208(R)|      SLOW  |         5.856(R)|      FAST  |Clock_BUFGP       |   0.000|
+ALU_result<6> |        12.570(R)|      SLOW  |         6.137(R)|      FAST  |Clock_BUFGP       |   0.000|
+ALU_result<7> |        12.240(R)|      SLOW  |         5.920(R)|      FAST  |Clock_BUFGP       |   0.000|
+ALU_result<8> |        12.646(R)|      SLOW  |         6.234(R)|      FAST  |Clock_BUFGP       |   0.000|
+ALU_result<9> |        12.252(R)|      SLOW  |         5.969(R)|      FAST  |Clock_BUFGP       |   0.000|
+ALU_result<10>|        12.979(R)|      SLOW  |         6.406(R)|      FAST  |Clock_BUFGP       |   0.000|
+ALU_result<11>|        12.347(R)|      SLOW  |         6.044(R)|      FAST  |Clock_BUFGP       |   0.000|
+ALU_result<12>|        13.106(R)|      SLOW  |         6.077(R)|      FAST  |Clock_BUFGP       |   0.000|
+ALU_result<13>|        12.567(R)|      SLOW  |         5.721(R)|      FAST  |Clock_BUFGP       |   0.000|
+ALU_result<14>|        13.199(R)|      SLOW  |         6.168(R)|      FAST  |Clock_BUFGP       |   0.000|
+ALU_result<15>|        12.869(R)|      SLOW  |         5.903(R)|      FAST  |Clock_BUFGP       |   0.000|
+ALU_result<16>|        13.418(R)|      SLOW  |         6.303(R)|      FAST  |Clock_BUFGP       |   0.000|
+ALU_result<17>|        13.546(R)|      SLOW  |         6.351(R)|      FAST  |Clock_BUFGP       |   0.000|
+ALU_result<18>|        13.067(R)|      SLOW  |         6.074(R)|      FAST  |Clock_BUFGP       |   0.000|
+ALU_result<19>|        13.401(R)|      SLOW  |         6.292(R)|      FAST  |Clock_BUFGP       |   0.000|
+ALU_result<20>|        13.776(R)|      SLOW  |         6.474(R)|      FAST  |Clock_BUFGP       |   0.000|
+ALU_result<21>|        13.706(R)|      SLOW  |         6.454(R)|      FAST  |Clock_BUFGP       |   0.000|
+ALU_result<22>|        13.606(R)|      SLOW  |         6.392(R)|      FAST  |Clock_BUFGP       |   0.000|
+ALU_result<23>|        13.906(R)|      SLOW  |         6.578(R)|      FAST  |Clock_BUFGP       |   0.000|
+ALU_result<24>|        13.882(R)|      SLOW  |         6.562(R)|      FAST  |Clock_BUFGP       |   0.000|
+ALU_result<25>|        14.424(R)|      SLOW  |         6.849(R)|      FAST  |Clock_BUFGP       |   0.000|
+ALU_result<26>|        14.019(R)|      SLOW  |         6.632(R)|      FAST  |Clock_BUFGP       |   0.000|
+ALU_result<27>|        14.030(R)|      SLOW  |         6.651(R)|      FAST  |Clock_BUFGP       |   0.000|
+ALU_result<28>|        14.177(R)|      SLOW  |         6.660(R)|      FAST  |Clock_BUFGP       |   0.000|
+ALU_result<29>|        14.272(R)|      SLOW  |         6.604(R)|      FAST  |Clock_BUFGP       |   0.000|
+ALU_result<30>|        14.241(R)|      SLOW  |         6.715(R)|      FAST  |Clock_BUFGP       |   0.000|
+ALU_result<31>|        14.275(R)|      SLOW  |         6.729(R)|      FAST  |Clock_BUFGP       |   0.000|
+addr<2>       |         8.556(R)|      SLOW  |         4.627(R)|      FAST  |Clock_BUFGP       |   0.000|
+addr<3>       |         8.578(R)|      SLOW  |         4.683(R)|      FAST  |Clock_BUFGP       |   0.000|
+addr<4>       |         9.046(R)|      SLOW  |         4.954(R)|      FAST  |Clock_BUFGP       |   0.000|
+addr<5>       |         9.194(R)|      SLOW  |         5.013(R)|      FAST  |Clock_BUFGP       |   0.000|
+addr<6>       |         9.501(R)|      SLOW  |         5.205(R)|      FAST  |Clock_BUFGP       |   0.000|
+addr<7>       |         9.605(R)|      SLOW  |         5.263(R)|      FAST  |Clock_BUFGP       |   0.000|
+addr<8>       |         9.503(R)|      SLOW  |         5.184(R)|      FAST  |Clock_BUFGP       |   0.000|
+addr<9>       |         9.662(R)|      SLOW  |         5.333(R)|      FAST  |Clock_BUFGP       |   0.000|
+addr<10>      |         8.935(R)|      SLOW  |         4.853(R)|      FAST  |Clock_BUFGP       |   0.000|
+addr<11>      |         9.642(R)|      SLOW  |         5.335(R)|      FAST  |Clock_BUFGP       |   0.000|
+addr<12>      |         9.096(R)|      SLOW  |         4.950(R)|      FAST  |Clock_BUFGP       |   0.000|
+addr<13>      |         9.542(R)|      SLOW  |         5.231(R)|      FAST  |Clock_BUFGP       |   0.000|
+addr<14>      |         9.625(R)|      SLOW  |         5.316(R)|      FAST  |Clock_BUFGP       |   0.000|
+addr<15>      |         9.779(R)|      SLOW  |         5.399(R)|      FAST  |Clock_BUFGP       |   0.000|
+addr<16>      |         9.639(R)|      SLOW  |         5.305(R)|      FAST  |Clock_BUFGP       |   0.000|
+addr<17>      |         9.940(R)|      SLOW  |         5.443(R)|      FAST  |Clock_BUFGP       |   0.000|
+addr<18>      |         8.846(R)|      SLOW  |         4.794(R)|      FAST  |Clock_BUFGP       |   0.000|
+addr<19>      |        10.127(R)|      SLOW  |         5.560(R)|      FAST  |Clock_BUFGP       |   0.000|
+addr<20>      |        11.335(R)|      SLOW  |         6.309(R)|      FAST  |Clock_BUFGP       |   0.000|
+addr<21>      |        10.846(R)|      SLOW  |         5.996(R)|      FAST  |Clock_BUFGP       |   0.000|
+addr<22>      |        10.663(R)|      SLOW  |         5.888(R)|      FAST  |Clock_BUFGP       |   0.000|
+addr<23>      |        11.949(R)|      SLOW  |         6.657(R)|      FAST  |Clock_BUFGP       |   0.000|
+addr<24>      |        12.067(R)|      SLOW  |         6.729(R)|      FAST  |Clock_BUFGP       |   0.000|
+addr<25>      |        11.382(R)|      SLOW  |         6.366(R)|      FAST  |Clock_BUFGP       |   0.000|
+addr<26>      |        11.389(R)|      SLOW  |         6.356(R)|      FAST  |Clock_BUFGP       |   0.000|
+addr<27>      |        11.489(R)|      SLOW  |         6.438(R)|      FAST  |Clock_BUFGP       |   0.000|
+addr<28>      |        11.756(R)|      SLOW  |         6.584(R)|      FAST  |Clock_BUFGP       |   0.000|
+addr<29>      |        11.191(R)|      SLOW  |         6.193(R)|      FAST  |Clock_BUFGP       |   0.000|
+addr<30>      |        12.119(R)|      SLOW  |         6.757(R)|      FAST  |Clock_BUFGP       |   0.000|
+addr<31>      |        11.402(R)|      SLOW  |         6.333(R)|      FAST  |Clock_BUFGP       |   0.000|
+--------------+-----------------+------------+-----------------+------------+------------------+--------+
+
+Clock to Setup on destination clock Clock
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+Clock          |    9.883|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Pad to Pad
+---------------+---------------+---------+
+Source Pad     |Destination Pad|  Delay  |
+---------------+---------------+---------+
+Instruction<0> |ALU_result<0>  |   10.884|
+Instruction<0> |ALU_result<1>  |   10.713|
+Instruction<0> |ALU_result<2>  |   11.072|
+Instruction<0> |ALU_result<3>  |   11.056|
+Instruction<0> |ALU_result<4>  |   11.324|
+Instruction<0> |ALU_result<5>  |   11.186|
+Instruction<0> |ALU_result<6>  |   11.548|
+Instruction<0> |ALU_result<7>  |   11.218|
+Instruction<0> |ALU_result<8>  |   11.665|
+Instruction<0> |ALU_result<9>  |   11.271|
+Instruction<0> |ALU_result<10> |   11.998|
+Instruction<0> |ALU_result<11> |   11.366|
+Instruction<0> |ALU_result<12> |   12.125|
+Instruction<0> |ALU_result<13> |   11.586|
+Instruction<0> |ALU_result<14> |   12.220|
+Instruction<0> |ALU_result<15> |   11.980|
+Instruction<0> |ALU_result<16> |   12.636|
+Instruction<0> |ALU_result<17> |   13.019|
+Instruction<0> |ALU_result<18> |   12.656|
+Instruction<0> |ALU_result<19> |   14.164|
+Instruction<0> |ALU_result<20> |   15.076|
+Instruction<0> |ALU_result<21> |   15.006|
+Instruction<0> |ALU_result<22> |   14.906|
+Instruction<0> |ALU_result<23> |   15.549|
+Instruction<0> |ALU_result<24> |   15.806|
+Instruction<0> |ALU_result<25> |   16.348|
+Instruction<0> |ALU_result<26> |   15.943|
+Instruction<0> |ALU_result<27> |   15.954|
+Instruction<0> |ALU_result<28> |   16.101|
+Instruction<0> |ALU_result<29> |   16.196|
+Instruction<0> |ALU_result<30> |   16.165|
+Instruction<0> |ALU_result<31> |   16.199|
+Instruction<0> |Ext_Imm<0>     |    7.782|
+Instruction<1> |ALU_result<0>  |   11.064|
+Instruction<1> |ALU_result<1>  |   10.893|
+Instruction<1> |ALU_result<2>  |   11.252|
+Instruction<1> |ALU_result<3>  |   11.248|
+Instruction<1> |ALU_result<4>  |   11.621|
+Instruction<1> |ALU_result<5>  |   11.465|
+Instruction<1> |ALU_result<6>  |   11.953|
+Instruction<1> |ALU_result<7>  |   11.611|
+Instruction<1> |ALU_result<8>  |   12.063|
+Instruction<1> |ALU_result<9>  |   11.669|
+Instruction<1> |ALU_result<10> |   12.396|
+Instruction<1> |ALU_result<11> |   11.764|
+Instruction<1> |ALU_result<12> |   12.619|
+Instruction<1> |ALU_result<13> |   12.062|
+Instruction<1> |ALU_result<14> |   12.820|
+Instruction<1> |ALU_result<15> |   12.478|
+Instruction<1> |ALU_result<16> |   13.073|
+Instruction<1> |ALU_result<17> |   13.657|
+Instruction<1> |ALU_result<18> |   13.294|
+Instruction<1> |ALU_result<19> |   14.131|
+Instruction<1> |ALU_result<20> |   15.043|
+Instruction<1> |ALU_result<21> |   14.973|
+Instruction<1> |ALU_result<22> |   14.873|
+Instruction<1> |ALU_result<23> |   15.516|
+Instruction<1> |ALU_result<24> |   15.773|
+Instruction<1> |ALU_result<25> |   16.315|
+Instruction<1> |ALU_result<26> |   15.910|
+Instruction<1> |ALU_result<27> |   15.921|
+Instruction<1> |ALU_result<28> |   16.068|
+Instruction<1> |ALU_result<29> |   16.163|
+Instruction<1> |ALU_result<30> |   16.132|
+Instruction<1> |ALU_result<31> |   16.166|
+Instruction<1> |Ext_Imm<1>     |    7.426|
+Instruction<2> |ALU_result<0>  |   11.417|
+Instruction<2> |ALU_result<1>  |   11.246|
+Instruction<2> |ALU_result<2>  |   11.605|
+Instruction<2> |ALU_result<3>  |   11.589|
+Instruction<2> |ALU_result<4>  |   11.857|
+Instruction<2> |ALU_result<5>  |   11.719|
+Instruction<2> |ALU_result<6>  |   12.081|
+Instruction<2> |ALU_result<7>  |   11.751|
+Instruction<2> |ALU_result<8>  |   12.157|
+Instruction<2> |ALU_result<9>  |   11.763|
+Instruction<2> |ALU_result<10> |   12.648|
+Instruction<2> |ALU_result<11> |   12.020|
+Instruction<2> |ALU_result<12> |   12.814|
+Instruction<2> |ALU_result<13> |   12.275|
+Instruction<2> |ALU_result<14> |   12.907|
+Instruction<2> |ALU_result<15> |   12.577|
+Instruction<2> |ALU_result<16> |   13.126|
+Instruction<2> |ALU_result<17> |   13.396|
+Instruction<2> |ALU_result<18> |   13.033|
+Instruction<2> |ALU_result<19> |   14.382|
+Instruction<2> |ALU_result<20> |   15.294|
+Instruction<2> |ALU_result<21> |   15.224|
+Instruction<2> |ALU_result<22> |   15.124|
+Instruction<2> |ALU_result<23> |   15.767|
+Instruction<2> |ALU_result<24> |   16.024|
+Instruction<2> |ALU_result<25> |   16.566|
+Instruction<2> |ALU_result<26> |   16.161|
+Instruction<2> |ALU_result<27> |   16.172|
+Instruction<2> |ALU_result<28> |   16.319|
+Instruction<2> |ALU_result<29> |   16.414|
+Instruction<2> |ALU_result<30> |   16.383|
+Instruction<2> |ALU_result<31> |   16.417|
+Instruction<2> |Ext_Imm<2>     |    7.303|
+Instruction<3> |ALU_result<3>  |   10.154|
+Instruction<3> |ALU_result<4>  |   10.483|
+Instruction<3> |ALU_result<5>  |   10.345|
+Instruction<3> |ALU_result<6>  |   10.707|
+Instruction<3> |ALU_result<7>  |   10.377|
+Instruction<3> |ALU_result<8>  |   10.783|
+Instruction<3> |ALU_result<9>  |   10.389|
+Instruction<3> |ALU_result<10> |   11.116|
+Instruction<3> |ALU_result<11> |   10.484|
+Instruction<3> |ALU_result<12> |   11.243|
+Instruction<3> |ALU_result<13> |   10.704|
+Instruction<3> |ALU_result<14> |   11.336|
+Instruction<3> |ALU_result<15> |   11.006|
+Instruction<3> |ALU_result<16> |   11.555|
+Instruction<3> |ALU_result<17> |   11.683|
+Instruction<3> |ALU_result<18> |   11.196|
+Instruction<3> |ALU_result<19> |   11.530|
+Instruction<3> |ALU_result<20> |   12.178|
+Instruction<3> |ALU_result<21> |   12.108|
+Instruction<3> |ALU_result<22> |   12.008|
+Instruction<3> |ALU_result<23> |   12.308|
+Instruction<3> |ALU_result<24> |   12.284|
+Instruction<3> |ALU_result<25> |   12.826|
+Instruction<3> |ALU_result<26> |   12.421|
+Instruction<3> |ALU_result<27> |   12.432|
+Instruction<3> |ALU_result<28> |   12.579|
+Instruction<3> |ALU_result<29> |   12.674|
+Instruction<3> |ALU_result<30> |   12.643|
+Instruction<3> |ALU_result<31> |   12.677|
+Instruction<3> |Ext_Imm<3>     |    6.430|
+Instruction<4> |ALU_result<4>  |   10.619|
+Instruction<4> |ALU_result<5>  |   10.463|
+Instruction<4> |ALU_result<6>  |   10.951|
+Instruction<4> |ALU_result<7>  |   10.609|
+Instruction<4> |ALU_result<8>  |   11.061|
+Instruction<4> |ALU_result<9>  |   10.667|
+Instruction<4> |ALU_result<10> |   11.394|
+Instruction<4> |ALU_result<11> |   10.762|
+Instruction<4> |ALU_result<12> |   11.521|
+Instruction<4> |ALU_result<13> |   10.982|
+Instruction<4> |ALU_result<14> |   11.614|
+Instruction<4> |ALU_result<15> |   11.284|
+Instruction<4> |ALU_result<16> |   11.833|
+Instruction<4> |ALU_result<17> |   11.961|
+Instruction<4> |ALU_result<18> |   11.474|
+Instruction<4> |ALU_result<19> |   11.808|
+Instruction<4> |ALU_result<20> |   12.506|
+Instruction<4> |ALU_result<21> |   12.554|
+Instruction<4> |ALU_result<22> |   12.578|
+Instruction<4> |ALU_result<23> |   12.866|
+Instruction<4> |ALU_result<24> |   12.890|
+Instruction<4> |ALU_result<25> |   13.432|
+Instruction<4> |ALU_result<26> |   13.027|
+Instruction<4> |ALU_result<27> |   13.038|
+Instruction<4> |ALU_result<28> |   13.185|
+Instruction<4> |ALU_result<29> |   13.280|
+Instruction<4> |ALU_result<30> |   13.249|
+Instruction<4> |ALU_result<31> |   13.283|
+Instruction<4> |Ext_Imm<4>     |    7.811|
+Instruction<5> |ALU_result<5>  |   10.824|
+Instruction<5> |ALU_result<6>  |   11.367|
+Instruction<5> |ALU_result<7>  |   11.041|
+Instruction<5> |ALU_result<8>  |   11.482|
+Instruction<5> |ALU_result<9>  |   11.088|
+Instruction<5> |ALU_result<10> |   11.815|
+Instruction<5> |ALU_result<11> |   11.183|
+Instruction<5> |ALU_result<12> |   11.942|
+Instruction<5> |ALU_result<13> |   11.403|
+Instruction<5> |ALU_result<14> |   12.035|
+Instruction<5> |ALU_result<15> |   11.705|
+Instruction<5> |ALU_result<16> |   12.254|
+Instruction<5> |ALU_result<17> |   12.382|
+Instruction<5> |ALU_result<18> |   11.895|
+Instruction<5> |ALU_result<19> |   12.229|
+Instruction<5> |ALU_result<20> |   12.604|
+Instruction<5> |ALU_result<21> |   12.534|
+Instruction<5> |ALU_result<22> |   12.434|
+Instruction<5> |ALU_result<23> |   12.734|
+Instruction<5> |ALU_result<24> |   12.710|
+Instruction<5> |ALU_result<25> |   13.252|
+Instruction<5> |ALU_result<26> |   12.847|
+Instruction<5> |ALU_result<27> |   12.858|
+Instruction<5> |ALU_result<28> |   13.005|
+Instruction<5> |ALU_result<29> |   13.100|
+Instruction<5> |ALU_result<30> |   13.069|
+Instruction<5> |ALU_result<31> |   13.103|
+Instruction<5> |Ext_Imm<5>     |    7.588|
+Instruction<6> |ALU_result<6>  |   10.985|
+Instruction<6> |ALU_result<7>  |   10.676|
+Instruction<6> |ALU_result<8>  |   11.113|
+Instruction<6> |ALU_result<9>  |   10.719|
+Instruction<6> |ALU_result<10> |   11.446|
+Instruction<6> |ALU_result<11> |   10.814|
+Instruction<6> |ALU_result<12> |   11.573|
+Instruction<6> |ALU_result<13> |   11.034|
+Instruction<6> |ALU_result<14> |   11.666|
+Instruction<6> |ALU_result<15> |   11.336|
+Instruction<6> |ALU_result<16> |   11.885|
+Instruction<6> |ALU_result<17> |   12.013|
+Instruction<6> |ALU_result<18> |   11.526|
+Instruction<6> |ALU_result<19> |   11.860|
+Instruction<6> |ALU_result<20> |   12.235|
+Instruction<6> |ALU_result<21> |   12.165|
+Instruction<6> |ALU_result<22> |   12.065|
+Instruction<6> |ALU_result<23> |   12.863|
+Instruction<6> |ALU_result<24> |   12.870|
+Instruction<6> |ALU_result<25> |   13.412|
+Instruction<6> |ALU_result<26> |   13.007|
+Instruction<6> |ALU_result<27> |   13.018|
+Instruction<6> |ALU_result<28> |   13.165|
+Instruction<6> |ALU_result<29> |   13.260|
+Instruction<6> |ALU_result<30> |   13.229|
+Instruction<6> |ALU_result<31> |   13.263|
+Instruction<6> |Ext_Imm<6>     |    7.937|
+Instruction<7> |ALU_result<7>  |   10.287|
+Instruction<7> |ALU_result<8>  |   10.800|
+Instruction<7> |ALU_result<9>  |   10.406|
+Instruction<7> |ALU_result<10> |   11.133|
+Instruction<7> |ALU_result<11> |   10.501|
+Instruction<7> |ALU_result<12> |   11.260|
+Instruction<7> |ALU_result<13> |   10.721|
+Instruction<7> |ALU_result<14> |   11.353|
+Instruction<7> |ALU_result<15> |   11.023|
+Instruction<7> |ALU_result<16> |   11.572|
+Instruction<7> |ALU_result<17> |   11.700|
+Instruction<7> |ALU_result<18> |   11.213|
+Instruction<7> |ALU_result<19> |   11.547|
+Instruction<7> |ALU_result<20> |   11.922|
+Instruction<7> |ALU_result<21> |   11.852|
+Instruction<7> |ALU_result<22> |   11.752|
+Instruction<7> |ALU_result<23> |   12.052|
+Instruction<7> |ALU_result<24> |   12.364|
+Instruction<7> |ALU_result<25> |   12.906|
+Instruction<7> |ALU_result<26> |   12.501|
+Instruction<7> |ALU_result<27> |   12.512|
+Instruction<7> |ALU_result<28> |   12.659|
+Instruction<7> |ALU_result<29> |   12.754|
+Instruction<7> |ALU_result<30> |   12.723|
+Instruction<7> |ALU_result<31> |   12.757|
+Instruction<7> |Ext_Imm<7>     |    7.332|
+Instruction<8> |ALU_result<8>  |   11.013|
+Instruction<8> |ALU_result<9>  |   10.601|
+Instruction<8> |ALU_result<10> |   11.454|
+Instruction<8> |ALU_result<11> |   10.810|
+Instruction<8> |ALU_result<12> |   11.615|
+Instruction<8> |ALU_result<13> |   11.076|
+Instruction<8> |ALU_result<14> |   11.708|
+Instruction<8> |ALU_result<15> |   11.378|
+Instruction<8> |ALU_result<16> |   11.927|
+Instruction<8> |ALU_result<17> |   12.055|
+Instruction<8> |ALU_result<18> |   11.568|
+Instruction<8> |ALU_result<19> |   11.902|
+Instruction<8> |ALU_result<20> |   12.277|
+Instruction<8> |ALU_result<21> |   12.207|
+Instruction<8> |ALU_result<22> |   12.107|
+Instruction<8> |ALU_result<23> |   12.407|
+Instruction<8> |ALU_result<24> |   12.476|
+Instruction<8> |ALU_result<25> |   13.254|
+Instruction<8> |ALU_result<26> |   12.973|
+Instruction<8> |ALU_result<27> |   12.972|
+Instruction<8> |ALU_result<28> |   13.167|
+Instruction<8> |ALU_result<29> |   13.262|
+Instruction<8> |ALU_result<30> |   13.231|
+Instruction<8> |ALU_result<31> |   13.265|
+Instruction<8> |Ext_Imm<8>     |    7.103|
+Instruction<9> |ALU_result<9>  |   10.145|
+Instruction<9> |ALU_result<10> |   11.053|
+Instruction<9> |ALU_result<11> |   10.425|
+Instruction<9> |ALU_result<12> |   11.219|
+Instruction<9> |ALU_result<13> |   10.680|
+Instruction<9> |ALU_result<14> |   11.312|
+Instruction<9> |ALU_result<15> |   10.982|
+Instruction<9> |ALU_result<16> |   11.531|
+Instruction<9> |ALU_result<17> |   11.659|
+Instruction<9> |ALU_result<18> |   11.172|
+Instruction<9> |ALU_result<19> |   11.506|
+Instruction<9> |ALU_result<20> |   11.881|
+Instruction<9> |ALU_result<21> |   11.811|
+Instruction<9> |ALU_result<22> |   11.711|
+Instruction<9> |ALU_result<23> |   12.011|
+Instruction<9> |ALU_result<24> |   11.987|
+Instruction<9> |ALU_result<25> |   12.529|
+Instruction<9> |ALU_result<26> |   12.176|
+Instruction<9> |ALU_result<27> |   12.191|
+Instruction<9> |ALU_result<28> |   12.373|
+Instruction<9> |ALU_result<29> |   12.468|
+Instruction<9> |ALU_result<30> |   12.437|
+Instruction<9> |ALU_result<31> |   12.471|
+Instruction<9> |Ext_Imm<9>     |    7.791|
+Instruction<10>|ALU_result<10> |   11.739|
+Instruction<10>|ALU_result<11> |   11.128|
+Instruction<10>|ALU_result<12> |   11.918|
+Instruction<10>|ALU_result<13> |   11.379|
+Instruction<10>|ALU_result<14> |   12.011|
+Instruction<10>|ALU_result<15> |   11.681|
+Instruction<10>|ALU_result<16> |   12.230|
+Instruction<10>|ALU_result<17> |   12.358|
+Instruction<10>|ALU_result<18> |   11.871|
+Instruction<10>|ALU_result<19> |   12.205|
+Instruction<10>|ALU_result<20> |   12.580|
+Instruction<10>|ALU_result<21> |   12.510|
+Instruction<10>|ALU_result<22> |   12.410|
+Instruction<10>|ALU_result<23> |   12.710|
+Instruction<10>|ALU_result<24> |   12.686|
+Instruction<10>|ALU_result<25> |   13.228|
+Instruction<10>|ALU_result<26> |   12.823|
+Instruction<10>|ALU_result<27> |   12.912|
+Instruction<10>|ALU_result<28> |   13.090|
+Instruction<10>|ALU_result<29> |   13.185|
+Instruction<10>|ALU_result<30> |   13.154|
+Instruction<10>|ALU_result<31> |   13.188|
+Instruction<10>|Ext_Imm<10>    |    7.565|
+Instruction<11>|ALU_result<11> |   10.808|
+Instruction<11>|ALU_result<12> |   11.674|
+Instruction<11>|ALU_result<13> |   11.135|
+Instruction<11>|ALU_result<14> |   11.767|
+Instruction<11>|ALU_result<15> |   11.437|
+Instruction<11>|ALU_result<16> |   11.986|
+Instruction<11>|ALU_result<17> |   12.114|
+Instruction<11>|ALU_result<18> |   11.627|
+Instruction<11>|ALU_result<19> |   11.961|
+Instruction<11>|ALU_result<20> |   12.336|
+Instruction<11>|ALU_result<21> |   12.266|
+Instruction<11>|ALU_result<22> |   12.166|
+Instruction<11>|ALU_result<23> |   12.466|
+Instruction<11>|ALU_result<24> |   12.442|
+Instruction<11>|ALU_result<25> |   12.984|
+Instruction<11>|ALU_result<26> |   12.579|
+Instruction<11>|ALU_result<27> |   12.829|
+Instruction<11>|ALU_result<28> |   13.070|
+Instruction<11>|ALU_result<29> |   13.165|
+Instruction<11>|ALU_result<30> |   13.134|
+Instruction<11>|ALU_result<31> |   13.168|
+Instruction<11>|Ext_Imm<11>    |    6.822|
+Instruction<12>|ALU_result<12> |   11.035|
+Instruction<12>|ALU_result<13> |   10.478|
+Instruction<12>|ALU_result<14> |   11.236|
+Instruction<12>|ALU_result<15> |   10.894|
+Instruction<12>|ALU_result<16> |   11.489|
+Instruction<12>|ALU_result<17> |   11.617|
+Instruction<12>|ALU_result<18> |   11.130|
+Instruction<12>|ALU_result<19> |   11.464|
+Instruction<12>|ALU_result<20> |   11.839|
+Instruction<12>|ALU_result<21> |   11.769|
+Instruction<12>|ALU_result<22> |   11.669|
+Instruction<12>|ALU_result<23> |   11.969|
+Instruction<12>|ALU_result<24> |   11.945|
+Instruction<12>|ALU_result<25> |   12.487|
+Instruction<12>|ALU_result<26> |   12.082|
+Instruction<12>|ALU_result<27> |   12.093|
+Instruction<12>|ALU_result<28> |   12.240|
+Instruction<12>|ALU_result<29> |   13.017|
+Instruction<12>|ALU_result<30> |   13.110|
+Instruction<12>|ALU_result<31> |   13.132|
+Instruction<12>|Ext_Imm<12>    |    7.593|
+Instruction<13>|ALU_result<13> |   11.184|
+Instruction<13>|ALU_result<14> |   11.997|
+Instruction<13>|ALU_result<15> |   11.671|
+Instruction<13>|ALU_result<16> |   12.255|
+Instruction<13>|ALU_result<17> |   12.383|
+Instruction<13>|ALU_result<18> |   11.896|
+Instruction<13>|ALU_result<19> |   12.230|
+Instruction<13>|ALU_result<20> |   12.605|
+Instruction<13>|ALU_result<21> |   12.535|
+Instruction<13>|ALU_result<22> |   12.435|
+Instruction<13>|ALU_result<23> |   12.735|
+Instruction<13>|ALU_result<24> |   12.711|
+Instruction<13>|ALU_result<25> |   13.253|
+Instruction<13>|ALU_result<26> |   12.848|
+Instruction<13>|ALU_result<27> |   12.859|
+Instruction<13>|ALU_result<28> |   13.006|
+Instruction<13>|ALU_result<29> |   13.101|
+Instruction<13>|ALU_result<30> |   13.245|
+Instruction<13>|ALU_result<31> |   13.269|
+Instruction<13>|Ext_Imm<13>    |    8.495|
+Instruction<14>|ALU_result<14> |   11.562|
+Instruction<14>|ALU_result<15> |   11.253|
+Instruction<14>|ALU_result<16> |   11.833|
+Instruction<14>|ALU_result<17> |   11.961|
+Instruction<14>|ALU_result<18> |   11.474|
+Instruction<14>|ALU_result<19> |   11.808|
+Instruction<14>|ALU_result<20> |   12.183|
+Instruction<14>|ALU_result<21> |   12.113|
+Instruction<14>|ALU_result<22> |   12.013|
+Instruction<14>|ALU_result<23> |   12.313|
+Instruction<14>|ALU_result<24> |   12.289|
+Instruction<14>|ALU_result<25> |   12.831|
+Instruction<14>|ALU_result<26> |   12.426|
+Instruction<14>|ALU_result<27> |   12.437|
+Instruction<14>|ALU_result<28> |   12.584|
+Instruction<14>|ALU_result<29> |   12.679|
+Instruction<14>|ALU_result<30> |   12.836|
+Instruction<14>|ALU_result<31> |   12.851|
+Instruction<14>|Ext_Imm<14>    |    7.759|
+Instruction<15>|ALU_result<15> |   11.593|
+Instruction<15>|ALU_result<16> |   12.308|
+Instruction<15>|ALU_result<17> |   12.731|
+Instruction<15>|ALU_result<18> |   12.607|
+Instruction<15>|ALU_result<19> |   12.931|
+Instruction<15>|ALU_result<20> |   13.316|
+Instruction<15>|ALU_result<21> |   13.246|
+Instruction<15>|ALU_result<22> |   13.146|
+Instruction<15>|ALU_result<23> |   13.446|
+Instruction<15>|ALU_result<24> |   13.422|
+Instruction<15>|ALU_result<25> |   14.158|
+Instruction<15>|ALU_result<26> |   13.877|
+Instruction<15>|ALU_result<27> |   13.876|
+Instruction<15>|ALU_result<28> |   14.071|
+Instruction<15>|ALU_result<29> |   14.166|
+Instruction<15>|ALU_result<30> |   14.135|
+Instruction<15>|ALU_result<31> |   14.169|
+Instruction<15>|Ext_Imm<15>    |    7.068|
+Instruction<15>|Ext_Imm<16>    |    8.109|
+Instruction<15>|Ext_Imm<17>    |    7.294|
+Instruction<15>|Ext_Imm<18>    |    8.301|
+Instruction<15>|Ext_Imm<19>    |    8.074|
+Instruction<15>|Ext_Imm<20>    |   10.280|
+Instruction<15>|Ext_Imm<21>    |    8.627|
+Instruction<15>|Ext_Imm<22>    |   13.544|
+Instruction<15>|Ext_Imm<23>    |    8.959|
+Instruction<15>|Ext_Imm<24>    |   13.909|
+Instruction<15>|Ext_Imm<25>    |    9.128|
+Instruction<15>|Ext_Imm<26>    |   13.737|
+Instruction<15>|Ext_Imm<27>    |   13.279|
+Instruction<15>|Ext_Imm<28>    |   11.114|
+Instruction<15>|Ext_Imm<29>    |   10.696|
+Instruction<15>|Ext_Imm<30>    |   13.576|
+Instruction<15>|Ext_Imm<31>    |   13.517|
+Instruction<16>|ALU_result<0>  |   11.461|
+Instruction<16>|ALU_result<1>  |   11.290|
+Instruction<16>|ALU_result<2>  |   11.649|
+Instruction<16>|ALU_result<3>  |   11.681|
+Instruction<16>|ALU_result<4>  |   12.010|
+Instruction<16>|ALU_result<5>  |   11.872|
+Instruction<16>|ALU_result<6>  |   12.318|
+Instruction<16>|ALU_result<7>  |   12.009|
+Instruction<16>|ALU_result<8>  |   12.446|
+Instruction<16>|ALU_result<9>  |   12.240|
+Instruction<16>|ALU_result<10> |   13.148|
+Instruction<16>|ALU_result<11> |   12.520|
+Instruction<16>|ALU_result<12> |   13.314|
+Instruction<16>|ALU_result<13> |   12.775|
+Instruction<16>|ALU_result<14> |   13.407|
+Instruction<16>|ALU_result<15> |   13.077|
+Instruction<16>|ALU_result<16> |   13.626|
+Instruction<16>|ALU_result<17> |   13.754|
+Instruction<16>|ALU_result<18> |   13.267|
+Instruction<16>|ALU_result<19> |   13.601|
+Instruction<16>|ALU_result<20> |   13.976|
+Instruction<16>|ALU_result<21> |   13.906|
+Instruction<16>|ALU_result<22> |   14.343|
+Instruction<16>|ALU_result<23> |   14.625|
+Instruction<16>|ALU_result<24> |   14.668|
+Instruction<16>|ALU_result<25> |   15.210|
+Instruction<16>|ALU_result<26> |   14.805|
+Instruction<16>|ALU_result<27> |   14.816|
+Instruction<16>|ALU_result<28> |   14.963|
+Instruction<16>|ALU_result<29> |   15.058|
+Instruction<16>|ALU_result<30> |   15.027|
+Instruction<16>|ALU_result<31> |   15.061|
+Instruction<17>|ALU_result<0>  |   11.660|
+Instruction<17>|ALU_result<1>  |   11.489|
+Instruction<17>|ALU_result<2>  |   11.848|
+Instruction<17>|ALU_result<3>  |   11.832|
+Instruction<17>|ALU_result<4>  |   12.100|
+Instruction<17>|ALU_result<5>  |   11.962|
+Instruction<17>|ALU_result<6>  |   13.102|
+Instruction<17>|ALU_result<7>  |   12.793|
+Instruction<17>|ALU_result<8>  |   13.230|
+Instruction<17>|ALU_result<9>  |   12.855|
+Instruction<17>|ALU_result<10> |   13.763|
+Instruction<17>|ALU_result<11> |   13.135|
+Instruction<17>|ALU_result<12> |   13.929|
+Instruction<17>|ALU_result<13> |   13.390|
+Instruction<17>|ALU_result<14> |   14.022|
+Instruction<17>|ALU_result<15> |   13.692|
+Instruction<17>|ALU_result<16> |   14.241|
+Instruction<17>|ALU_result<17> |   14.369|
+Instruction<17>|ALU_result<18> |   13.882|
+Instruction<17>|ALU_result<19> |   14.216|
+Instruction<17>|ALU_result<20> |   14.591|
+Instruction<17>|ALU_result<21> |   14.521|
+Instruction<17>|ALU_result<22> |   14.421|
+Instruction<17>|ALU_result<23> |   14.980|
+Instruction<17>|ALU_result<24> |   14.987|
+Instruction<17>|ALU_result<25> |   15.529|
+Instruction<17>|ALU_result<26> |   15.124|
+Instruction<17>|ALU_result<27> |   15.135|
+Instruction<17>|ALU_result<28> |   15.282|
+Instruction<17>|ALU_result<29> |   15.377|
+Instruction<17>|ALU_result<30> |   15.346|
+Instruction<17>|ALU_result<31> |   15.380|
+Instruction<18>|ALU_result<0>  |   11.835|
+Instruction<18>|ALU_result<1>  |   11.664|
+Instruction<18>|ALU_result<2>  |   12.023|
+Instruction<18>|ALU_result<3>  |   12.132|
+Instruction<18>|ALU_result<4>  |   12.461|
+Instruction<18>|ALU_result<5>  |   12.323|
+Instruction<18>|ALU_result<6>  |   12.873|
+Instruction<18>|ALU_result<7>  |   12.564|
+Instruction<18>|ALU_result<8>  |   13.001|
+Instruction<18>|ALU_result<9>  |   12.697|
+Instruction<18>|ALU_result<10> |   13.605|
+Instruction<18>|ALU_result<11> |   12.977|
+Instruction<18>|ALU_result<12> |   13.771|
+Instruction<18>|ALU_result<13> |   13.232|
+Instruction<18>|ALU_result<14> |   13.864|
+Instruction<18>|ALU_result<15> |   13.534|
+Instruction<18>|ALU_result<16> |   14.083|
+Instruction<18>|ALU_result<17> |   14.211|
+Instruction<18>|ALU_result<18> |   13.724|
+Instruction<18>|ALU_result<19> |   14.058|
+Instruction<18>|ALU_result<20> |   14.433|
+Instruction<18>|ALU_result<21> |   14.363|
+Instruction<18>|ALU_result<22> |   14.296|
+Instruction<18>|ALU_result<23> |   14.751|
+Instruction<18>|ALU_result<24> |   14.758|
+Instruction<18>|ALU_result<25> |   15.300|
+Instruction<18>|ALU_result<26> |   14.895|
+Instruction<18>|ALU_result<27> |   14.906|
+Instruction<18>|ALU_result<28> |   15.053|
+Instruction<18>|ALU_result<29> |   15.148|
+Instruction<18>|ALU_result<30> |   15.117|
+Instruction<18>|ALU_result<31> |   15.151|
+Instruction<19>|ALU_result<0>  |   12.037|
+Instruction<19>|ALU_result<1>  |   11.866|
+Instruction<19>|ALU_result<2>  |   12.225|
+Instruction<19>|ALU_result<3>  |   12.283|
+Instruction<19>|ALU_result<4>  |   12.612|
+Instruction<19>|ALU_result<5>  |   12.474|
+Instruction<19>|ALU_result<6>  |   12.836|
+Instruction<19>|ALU_result<7>  |   12.506|
+Instruction<19>|ALU_result<8>  |   12.912|
+Instruction<19>|ALU_result<9>  |   12.523|
+Instruction<19>|ALU_result<10> |   13.431|
+Instruction<19>|ALU_result<11> |   12.803|
+Instruction<19>|ALU_result<12> |   13.597|
+Instruction<19>|ALU_result<13> |   13.058|
+Instruction<19>|ALU_result<14> |   13.690|
+Instruction<19>|ALU_result<15> |   13.360|
+Instruction<19>|ALU_result<16> |   13.909|
+Instruction<19>|ALU_result<17> |   14.037|
+Instruction<19>|ALU_result<18> |   13.733|
+Instruction<19>|ALU_result<19> |   14.057|
+Instruction<19>|ALU_result<20> |   14.442|
+Instruction<19>|ALU_result<21> |   14.372|
+Instruction<19>|ALU_result<22> |   14.373|
+Instruction<19>|ALU_result<23> |   14.655|
+Instruction<19>|ALU_result<24> |   14.698|
+Instruction<19>|ALU_result<25> |   15.240|
+Instruction<19>|ALU_result<26> |   14.835|
+Instruction<19>|ALU_result<27> |   14.846|
+Instruction<19>|ALU_result<28> |   14.993|
+Instruction<19>|ALU_result<29> |   15.088|
+Instruction<19>|ALU_result<30> |   15.088|
+Instruction<19>|ALU_result<31> |   15.110|
+Instruction<20>|ALU_result<0>  |   11.515|
+Instruction<20>|ALU_result<1>  |   11.344|
+Instruction<20>|ALU_result<2>  |   11.703|
+Instruction<20>|ALU_result<3>  |   11.771|
+Instruction<20>|ALU_result<4>  |   12.100|
+Instruction<20>|ALU_result<5>  |   11.962|
+Instruction<20>|ALU_result<6>  |   12.356|
+Instruction<20>|ALU_result<7>  |   12.047|
+Instruction<20>|ALU_result<8>  |   12.484|
+Instruction<20>|ALU_result<9>  |   12.245|
+Instruction<20>|ALU_result<10> |   13.153|
+Instruction<20>|ALU_result<11> |   12.525|
+Instruction<20>|ALU_result<12> |   13.319|
+Instruction<20>|ALU_result<13> |   12.780|
+Instruction<20>|ALU_result<14> |   13.412|
+Instruction<20>|ALU_result<15> |   13.082|
+Instruction<20>|ALU_result<16> |   13.631|
+Instruction<20>|ALU_result<17> |   13.759|
+Instruction<20>|ALU_result<18> |   13.324|
+Instruction<20>|ALU_result<19> |   13.648|
+Instruction<20>|ALU_result<20> |   14.033|
+Instruction<20>|ALU_result<21> |   13.963|
+Instruction<20>|ALU_result<22> |   13.933|
+Instruction<20>|ALU_result<23> |   14.234|
+Instruction<20>|ALU_result<24> |   14.258|
+Instruction<20>|ALU_result<25> |   14.800|
+Instruction<20>|ALU_result<26> |   14.395|
+Instruction<20>|ALU_result<27> |   14.406|
+Instruction<20>|ALU_result<28> |   14.589|
+Instruction<20>|ALU_result<29> |   14.684|
+Instruction<20>|ALU_result<30> |   14.653|
+Instruction<20>|ALU_result<31> |   14.687|
+Instruction<21>|ALU_result<0>  |   12.019|
+Instruction<21>|ALU_result<1>  |   11.875|
+Instruction<21>|ALU_result<2>  |   12.309|
+Instruction<21>|ALU_result<3>  |   12.501|
+Instruction<21>|ALU_result<4>  |   12.830|
+Instruction<21>|ALU_result<5>  |   12.692|
+Instruction<21>|ALU_result<6>  |   13.055|
+Instruction<21>|ALU_result<7>  |   12.746|
+Instruction<21>|ALU_result<8>  |   13.223|
+Instruction<21>|ALU_result<9>  |   12.829|
+Instruction<21>|ALU_result<10> |   13.592|
+Instruction<21>|ALU_result<11> |   12.948|
+Instruction<21>|ALU_result<12> |   13.753|
+Instruction<21>|ALU_result<13> |   13.214|
+Instruction<21>|ALU_result<14> |   13.846|
+Instruction<21>|ALU_result<15> |   13.516|
+Instruction<21>|ALU_result<16> |   14.065|
+Instruction<21>|ALU_result<17> |   14.232|
+Instruction<21>|ALU_result<18> |   13.869|
+Instruction<21>|ALU_result<19> |   14.191|
+Instruction<21>|ALU_result<20> |   14.614|
+Instruction<21>|ALU_result<21> |   14.544|
+Instruction<21>|ALU_result<22> |   14.444|
+Instruction<21>|ALU_result<23> |   14.744|
+Instruction<21>|ALU_result<24> |   14.787|
+Instruction<21>|ALU_result<25> |   15.329|
+Instruction<21>|ALU_result<26> |   14.924|
+Instruction<21>|ALU_result<27> |   14.935|
+Instruction<21>|ALU_result<28> |   15.082|
+Instruction<21>|ALU_result<29> |   15.177|
+Instruction<21>|ALU_result<30> |   15.146|
+Instruction<21>|ALU_result<31> |   15.180|
+Instruction<22>|ALU_result<0>  |   12.644|
+Instruction<22>|ALU_result<1>  |   13.121|
+Instruction<22>|ALU_result<2>  |   13.535|
+Instruction<22>|ALU_result<3>  |   13.535|
+Instruction<22>|ALU_result<4>  |   13.792|
+Instruction<22>|ALU_result<5>  |   13.654|
+Instruction<22>|ALU_result<6>  |   14.208|
+Instruction<22>|ALU_result<7>  |   13.956|
+Instruction<22>|ALU_result<8>  |   14.625|
+Instruction<22>|ALU_result<9>  |   14.213|
+Instruction<22>|ALU_result<10> |   15.066|
+Instruction<22>|ALU_result<11> |   14.422|
+Instruction<22>|ALU_result<12> |   15.227|
+Instruction<22>|ALU_result<13> |   14.688|
+Instruction<22>|ALU_result<14> |   15.320|
+Instruction<22>|ALU_result<15> |   14.990|
+Instruction<22>|ALU_result<16> |   15.539|
+Instruction<22>|ALU_result<17> |   15.667|
+Instruction<22>|ALU_result<18> |   15.180|
+Instruction<22>|ALU_result<19> |   15.657|
+Instruction<22>|ALU_result<20> |   16.063|
+Instruction<22>|ALU_result<21> |   15.993|
+Instruction<22>|ALU_result<22> |   15.893|
+Instruction<22>|ALU_result<23> |   16.193|
+Instruction<22>|ALU_result<24> |   16.192|
+Instruction<22>|ALU_result<25> |   16.734|
+Instruction<22>|ALU_result<26> |   16.329|
+Instruction<22>|ALU_result<27> |   16.340|
+Instruction<22>|ALU_result<28> |   16.487|
+Instruction<22>|ALU_result<29> |   16.582|
+Instruction<22>|ALU_result<30> |   16.551|
+Instruction<22>|ALU_result<31> |   16.585|
+Instruction<23>|ALU_result<0>  |   12.126|
+Instruction<23>|ALU_result<1>  |   12.603|
+Instruction<23>|ALU_result<2>  |   13.017|
+Instruction<23>|ALU_result<3>  |   13.017|
+Instruction<23>|ALU_result<4>  |   13.274|
+Instruction<23>|ALU_result<5>  |   13.136|
+Instruction<23>|ALU_result<6>  |   13.694|
+Instruction<23>|ALU_result<7>  |   13.438|
+Instruction<23>|ALU_result<8>  |   14.000|
+Instruction<23>|ALU_result<9>  |   13.588|
+Instruction<23>|ALU_result<10> |   14.441|
+Instruction<23>|ALU_result<11> |   13.797|
+Instruction<23>|ALU_result<12> |   14.602|
+Instruction<23>|ALU_result<13> |   14.063|
+Instruction<23>|ALU_result<14> |   14.695|
+Instruction<23>|ALU_result<15> |   14.365|
+Instruction<23>|ALU_result<16> |   15.170|
+Instruction<23>|ALU_result<17> |   15.851|
+Instruction<23>|ALU_result<18> |   15.488|
+Instruction<23>|ALU_result<19> |   15.810|
+Instruction<23>|ALU_result<20> |   16.233|
+Instruction<23>|ALU_result<21> |   16.163|
+Instruction<23>|ALU_result<22> |   16.063|
+Instruction<23>|ALU_result<23> |   16.363|
+Instruction<23>|ALU_result<24> |   16.339|
+Instruction<23>|ALU_result<25> |   16.881|
+Instruction<23>|ALU_result<26> |   16.476|
+Instruction<23>|ALU_result<27> |   16.487|
+Instruction<23>|ALU_result<28> |   16.634|
+Instruction<23>|ALU_result<29> |   16.729|
+Instruction<23>|ALU_result<30> |   16.698|
+Instruction<23>|ALU_result<31> |   16.732|
+Instruction<24>|ALU_result<0>  |   12.860|
+Instruction<24>|ALU_result<1>  |   13.337|
+Instruction<24>|ALU_result<2>  |   13.751|
+Instruction<24>|ALU_result<3>  |   13.751|
+Instruction<24>|ALU_result<4>  |   14.008|
+Instruction<24>|ALU_result<5>  |   13.870|
+Instruction<24>|ALU_result<6>  |   14.232|
+Instruction<24>|ALU_result<7>  |   14.172|
+Instruction<24>|ALU_result<8>  |   14.685|
+Instruction<24>|ALU_result<9>  |   14.291|
+Instruction<24>|ALU_result<10> |   15.018|
+Instruction<24>|ALU_result<11> |   14.386|
+Instruction<24>|ALU_result<12> |   15.938|
+Instruction<24>|ALU_result<13> |   15.381|
+Instruction<24>|ALU_result<14> |   16.187|
+Instruction<24>|ALU_result<15> |   15.878|
+Instruction<24>|ALU_result<16> |   16.458|
+Instruction<24>|ALU_result<17> |   16.809|
+Instruction<24>|ALU_result<18> |   16.446|
+Instruction<24>|ALU_result<19> |   16.768|
+Instruction<24>|ALU_result<20> |   17.191|
+Instruction<24>|ALU_result<21> |   17.121|
+Instruction<24>|ALU_result<22> |   17.021|
+Instruction<24>|ALU_result<23> |   17.321|
+Instruction<24>|ALU_result<24> |   17.297|
+Instruction<24>|ALU_result<25> |   17.839|
+Instruction<24>|ALU_result<26> |   17.434|
+Instruction<24>|ALU_result<27> |   17.445|
+Instruction<24>|ALU_result<28> |   17.592|
+Instruction<24>|ALU_result<29> |   17.687|
+Instruction<24>|ALU_result<30> |   17.656|
+Instruction<24>|ALU_result<31> |   17.690|
+Instruction<25>|ALU_result<0>  |   12.173|
+Instruction<25>|ALU_result<1>  |   12.650|
+Instruction<25>|ALU_result<2>  |   13.064|
+Instruction<25>|ALU_result<3>  |   13.064|
+Instruction<25>|ALU_result<4>  |   13.321|
+Instruction<25>|ALU_result<5>  |   13.183|
+Instruction<25>|ALU_result<6>  |   13.545|
+Instruction<25>|ALU_result<7>  |   13.485|
+Instruction<25>|ALU_result<8>  |   13.998|
+Instruction<25>|ALU_result<9>  |   13.604|
+Instruction<25>|ALU_result<10> |   14.331|
+Instruction<25>|ALU_result<11> |   13.699|
+Instruction<25>|ALU_result<12> |   15.032|
+Instruction<25>|ALU_result<13> |   14.475|
+Instruction<25>|ALU_result<14> |   15.233|
+Instruction<25>|ALU_result<15> |   14.904|
+Instruction<25>|ALU_result<16> |   15.488|
+Instruction<25>|ALU_result<17> |   16.047|
+Instruction<25>|ALU_result<18> |   15.684|
+Instruction<25>|ALU_result<19> |   16.006|
+Instruction<25>|ALU_result<20> |   16.429|
+Instruction<25>|ALU_result<21> |   16.359|
+Instruction<25>|ALU_result<22> |   16.259|
+Instruction<25>|ALU_result<23> |   16.559|
+Instruction<25>|ALU_result<24> |   16.535|
+Instruction<25>|ALU_result<25> |   17.077|
+Instruction<25>|ALU_result<26> |   16.672|
+Instruction<25>|ALU_result<27> |   16.683|
+Instruction<25>|ALU_result<28> |   16.830|
+Instruction<25>|ALU_result<29> |   16.925|
+Instruction<25>|ALU_result<30> |   16.894|
+Instruction<25>|ALU_result<31> |   16.928|
+Instruction<26>|ALU_result<0>  |   11.505|
+Instruction<26>|ALU_result<1>  |   11.334|
+Instruction<26>|ALU_result<2>  |   11.693|
+Instruction<26>|ALU_result<3>  |   11.677|
+Instruction<26>|ALU_result<4>  |   11.945|
+Instruction<26>|ALU_result<5>  |   11.807|
+Instruction<26>|ALU_result<6>  |   12.206|
+Instruction<26>|ALU_result<7>  |   11.864|
+Instruction<26>|ALU_result<8>  |   12.316|
+Instruction<26>|ALU_result<9>  |   11.922|
+Instruction<26>|ALU_result<10> |   12.736|
+Instruction<26>|ALU_result<11> |   12.108|
+Instruction<26>|ALU_result<12> |   12.902|
+Instruction<26>|ALU_result<13> |   12.363|
+Instruction<26>|ALU_result<14> |   13.073|
+Instruction<26>|ALU_result<15> |   12.731|
+Instruction<26>|ALU_result<16> |   13.326|
+Instruction<26>|ALU_result<17> |   13.910|
+Instruction<26>|ALU_result<18> |   13.547|
+Instruction<26>|ALU_result<19> |   14.396|
+Instruction<26>|ALU_result<20> |   15.308|
+Instruction<26>|ALU_result<21> |   15.238|
+Instruction<26>|ALU_result<22> |   15.138|
+Instruction<26>|ALU_result<23> |   15.781|
+Instruction<26>|ALU_result<24> |   16.038|
+Instruction<26>|ALU_result<25> |   16.580|
+Instruction<26>|ALU_result<26> |   16.175|
+Instruction<26>|ALU_result<27> |   16.186|
+Instruction<26>|ALU_result<28> |   16.333|
+Instruction<26>|ALU_result<29> |   16.428|
+Instruction<26>|ALU_result<30> |   16.397|
+Instruction<26>|ALU_result<31> |   16.431|
+Instruction<27>|ALU_result<0>  |   14.081|
+Instruction<27>|ALU_result<1>  |   13.910|
+Instruction<27>|ALU_result<2>  |   14.269|
+Instruction<27>|ALU_result<3>  |   14.267|
+Instruction<27>|ALU_result<4>  |   14.524|
+Instruction<27>|ALU_result<5>  |   14.386|
+Instruction<27>|ALU_result<6>  |   14.756|
+Instruction<27>|ALU_result<7>  |   14.501|
+Instruction<27>|ALU_result<8>  |   15.014|
+Instruction<27>|ALU_result<9>  |   14.620|
+Instruction<27>|ALU_result<10> |   15.347|
+Instruction<27>|ALU_result<11> |   14.715|
+Instruction<27>|ALU_result<12> |   15.474|
+Instruction<27>|ALU_result<13> |   14.935|
+Instruction<27>|ALU_result<14> |   15.569|
+Instruction<27>|ALU_result<15> |   15.329|
+Instruction<27>|ALU_result<16> |   15.985|
+Instruction<27>|ALU_result<17> |   16.368|
+Instruction<27>|ALU_result<18> |   16.005|
+Instruction<27>|ALU_result<19> |   17.513|
+Instruction<27>|ALU_result<20> |   18.425|
+Instruction<27>|ALU_result<21> |   18.355|
+Instruction<27>|ALU_result<22> |   18.255|
+Instruction<27>|ALU_result<23> |   18.898|
+Instruction<27>|ALU_result<24> |   19.155|
+Instruction<27>|ALU_result<25> |   19.697|
+Instruction<27>|ALU_result<26> |   19.292|
+Instruction<27>|ALU_result<27> |   19.303|
+Instruction<27>|ALU_result<28> |   19.450|
+Instruction<27>|ALU_result<29> |   19.545|
+Instruction<27>|ALU_result<30> |   19.514|
+Instruction<27>|ALU_result<31> |   19.548|
+Instruction<28>|ALU_result<0>  |   11.037|
+Instruction<28>|ALU_result<1>  |   10.866|
+Instruction<28>|ALU_result<2>  |   11.225|
+Instruction<28>|ALU_result<3>  |   11.299|
+Instruction<28>|ALU_result<4>  |   11.628|
+Instruction<28>|ALU_result<5>  |   11.490|
+Instruction<28>|ALU_result<6>  |   11.890|
+Instruction<28>|ALU_result<7>  |   11.581|
+Instruction<28>|ALU_result<8>  |   12.031|
+Instruction<28>|ALU_result<9>  |   11.637|
+Instruction<28>|ALU_result<10> |   12.364|
+Instruction<28>|ALU_result<11> |   11.732|
+Instruction<28>|ALU_result<12> |   12.491|
+Instruction<28>|ALU_result<13> |   11.952|
+Instruction<28>|ALU_result<14> |   12.605|
+Instruction<28>|ALU_result<15> |   12.263|
+Instruction<28>|ALU_result<16> |   12.858|
+Instruction<28>|ALU_result<17> |   13.442|
+Instruction<28>|ALU_result<18> |   13.079|
+Instruction<28>|ALU_result<19> |   13.928|
+Instruction<28>|ALU_result<20> |   14.840|
+Instruction<28>|ALU_result<21> |   14.770|
+Instruction<28>|ALU_result<22> |   14.670|
+Instruction<28>|ALU_result<23> |   15.313|
+Instruction<28>|ALU_result<24> |   15.570|
+Instruction<28>|ALU_result<25> |   16.112|
+Instruction<28>|ALU_result<26> |   15.707|
+Instruction<28>|ALU_result<27> |   15.718|
+Instruction<28>|ALU_result<28> |   15.865|
+Instruction<28>|ALU_result<29> |   15.960|
+Instruction<28>|ALU_result<30> |   15.929|
+Instruction<28>|ALU_result<31> |   15.963|
+Instruction<29>|ALU_result<0>  |   16.957|
+Instruction<29>|ALU_result<1>  |   16.786|
+Instruction<29>|ALU_result<2>  |   17.145|
+Instruction<29>|ALU_result<3>  |   17.143|
+Instruction<29>|ALU_result<4>  |   17.400|
+Instruction<29>|ALU_result<5>  |   17.262|
+Instruction<29>|ALU_result<6>  |   17.632|
+Instruction<29>|ALU_result<7>  |   17.377|
+Instruction<29>|ALU_result<8>  |   17.890|
+Instruction<29>|ALU_result<9>  |   17.496|
+Instruction<29>|ALU_result<10> |   18.223|
+Instruction<29>|ALU_result<11> |   17.591|
+Instruction<29>|ALU_result<12> |   18.350|
+Instruction<29>|ALU_result<13> |   17.811|
+Instruction<29>|ALU_result<14> |   18.445|
+Instruction<29>|ALU_result<15> |   18.205|
+Instruction<29>|ALU_result<16> |   18.861|
+Instruction<29>|ALU_result<17> |   19.244|
+Instruction<29>|ALU_result<18> |   18.881|
+Instruction<29>|ALU_result<19> |   20.389|
+Instruction<29>|ALU_result<20> |   21.301|
+Instruction<29>|ALU_result<21> |   21.231|
+Instruction<29>|ALU_result<22> |   21.131|
+Instruction<29>|ALU_result<23> |   21.774|
+Instruction<29>|ALU_result<24> |   22.031|
+Instruction<29>|ALU_result<25> |   22.573|
+Instruction<29>|ALU_result<26> |   22.168|
+Instruction<29>|ALU_result<27> |   22.179|
+Instruction<29>|ALU_result<28> |   22.326|
+Instruction<29>|ALU_result<29> |   22.421|
+Instruction<29>|ALU_result<30> |   22.390|
+Instruction<29>|ALU_result<31> |   22.424|
+Instruction<29>|MemRead        |   17.829|
+Instruction<29>|MemWrite       |   18.185|
+Instruction<30>|ALU_result<0>  |   11.045|
+Instruction<30>|ALU_result<1>  |   10.874|
+Instruction<30>|ALU_result<2>  |   11.233|
+Instruction<30>|ALU_result<3>  |   11.217|
+Instruction<30>|ALU_result<4>  |   11.485|
+Instruction<30>|ALU_result<5>  |   11.347|
+Instruction<30>|ALU_result<6>  |   11.746|
+Instruction<30>|ALU_result<7>  |   11.404|
+Instruction<30>|ALU_result<8>  |   11.856|
+Instruction<30>|ALU_result<9>  |   11.462|
+Instruction<30>|ALU_result<10> |   12.276|
+Instruction<30>|ALU_result<11> |   11.648|
+Instruction<30>|ALU_result<12> |   12.442|
+Instruction<30>|ALU_result<13> |   11.903|
+Instruction<30>|ALU_result<14> |   12.613|
+Instruction<30>|ALU_result<15> |   12.271|
+Instruction<30>|ALU_result<16> |   12.866|
+Instruction<30>|ALU_result<17> |   13.450|
+Instruction<30>|ALU_result<18> |   13.087|
+Instruction<30>|ALU_result<19> |   13.936|
+Instruction<30>|ALU_result<20> |   14.848|
+Instruction<30>|ALU_result<21> |   14.778|
+Instruction<30>|ALU_result<22> |   14.678|
+Instruction<30>|ALU_result<23> |   15.321|
+Instruction<30>|ALU_result<24> |   15.578|
+Instruction<30>|ALU_result<25> |   16.120|
+Instruction<30>|ALU_result<26> |   15.715|
+Instruction<30>|ALU_result<27> |   15.726|
+Instruction<30>|ALU_result<28> |   15.873|
+Instruction<30>|ALU_result<29> |   15.968|
+Instruction<30>|ALU_result<30> |   15.937|
+Instruction<30>|ALU_result<31> |   15.971|
+Instruction<31>|ALU_result<0>  |   11.232|
+Instruction<31>|ALU_result<1>  |   11.061|
+Instruction<31>|ALU_result<2>  |   11.420|
+Instruction<31>|ALU_result<3>  |   11.407|
+Instruction<31>|ALU_result<4>  |   11.736|
+Instruction<31>|ALU_result<5>  |   11.598|
+Instruction<31>|ALU_result<6>  |   12.203|
+Instruction<31>|ALU_result<7>  |   11.894|
+Instruction<31>|ALU_result<8>  |   12.382|
+Instruction<31>|ALU_result<9>  |   11.970|
+Instruction<31>|ALU_result<10> |   12.823|
+Instruction<31>|ALU_result<11> |   12.179|
+Instruction<31>|ALU_result<12> |   13.036|
+Instruction<31>|ALU_result<13> |   12.497|
+Instruction<31>|ALU_result<14> |   13.129|
+Instruction<31>|ALU_result<15> |   12.799|
+Instruction<31>|ALU_result<16> |   13.348|
+Instruction<31>|ALU_result<17> |   13.637|
+Instruction<31>|ALU_result<18> |   13.274|
+Instruction<31>|ALU_result<19> |   14.123|
+Instruction<31>|ALU_result<20> |   15.035|
+Instruction<31>|ALU_result<21> |   14.965|
+Instruction<31>|ALU_result<22> |   14.865|
+Instruction<31>|ALU_result<23> |   15.508|
+Instruction<31>|ALU_result<24> |   15.765|
+Instruction<31>|ALU_result<25> |   16.307|
+Instruction<31>|ALU_result<26> |   15.902|
+Instruction<31>|ALU_result<27> |   15.913|
+Instruction<31>|ALU_result<28> |   16.060|
+Instruction<31>|ALU_result<29> |   16.155|
+Instruction<31>|ALU_result<30> |   16.124|
+Instruction<31>|ALU_result<31> |   16.158|
+Instruction<31>|MemRead        |   16.842|
+Instruction<31>|MemWrite       |   17.198|
+---------------+---------------+---------+
+
+
+Analysis completed Sun Jun 23 15:53:57 2019 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 4628 MB
+
+
+

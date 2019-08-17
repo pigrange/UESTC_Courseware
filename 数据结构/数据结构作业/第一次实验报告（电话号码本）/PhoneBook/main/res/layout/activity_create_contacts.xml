@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.CreateContacts">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/mtoolBar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:theme="@style/ToolbarTheme"
+        app:popupTheme="@style/MenuTheme"
+        app:title="新建联系人" />
+
+    <EditText
+        android:layout_marginTop="10dp"
+        android:textSize="14sp"
+        android:id="@+id/create_contacts_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:focusable="true"
+        android:gravity="start"
+        android:hint="姓名"
+        android:maxEms="10"
+        android:singleLine="true"
+        android:inputType="text" />
+
+    <EditText
+        android:textSize="14sp"
+        android:id="@+id/create_contacts_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="10dp"
+        android:gravity="start"
+        android:hint="电话号码"
+        android:inputType="number"
+        android:maxEms="20"
+        android:singleLine="true" />
+    <EditText
+        android:textSize="14sp"
+        android:id="@+id/create_contacts_extra_number1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="10dp"
+        android:gravity="start"
+        android:hint="座机号码"
+        android:inputType="number"
+        android:maxEms="20"
+        android:singleLine="true" />
+
+    <EditText
+        android:textSize="14sp"
+        android:id="@+id/create_contacts_extra_number2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="10dp"
+        android:gravity="start"
+        android:hint="其他号码"
+        android:inputType="number"
+        android:maxEms="20"
+        android:singleLine="true" />
+
+
+    <EditText
+        android:textSize="14sp"
+        android:id="@+id/create_contacts_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="10dp"
+        android:gravity="start"
+        android:hint="家庭住址"
+        android:maxEms="30"
+        android:maxLines="2" />
+
+
+</LinearLayout>

@@ -1,0 +1,493 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.18 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.18 secs
+ 
+--> Reading design: Fetch.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "Fetch.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "Fetch"
+Output Format                      : NGC
+Target Device                      : xc6slx45-3-csg484
+
+---- Source Options
+Top Module Name                    : Fetch
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "D:\Codes\Verilog\CPU\PC.v" into library work
+Parsing module <PC>.
+Analyzing Verilog file "D:\Codes\Verilog\CPU\MUX_32_4_1.v" into library work
+Parsing module <MUX32_4_1>.
+Analyzing Verilog file "D:\Codes\Verilog\CPU\Left2Shifter.v" into library work
+Parsing module <Left_2_Shifter>.
+Analyzing Verilog file "D:\Codes\Verilog\CPU\JointAddr.v" into library work
+Parsing module <Joint_Addr>.
+Analyzing Verilog file "D:\Codes\Verilog\CPU\ADD32.v" into library work
+Parsing module <ADD32>.
+Analyzing Verilog file "D:\Codes\Verilog\CPU\Fetch.v" into library work
+Parsing module <Fetch>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <Fetch>.
+
+Elaborating module <Left_2_Shifter>.
+
+Elaborating module <ADD32>.
+
+Elaborating module <Joint_Addr>.
+
+Elaborating module <MUX32_4_1>.
+
+Elaborating module <PC>.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <Fetch>.
+    Related source file is "D:\Codes\Verilog\CPU\Fetch.v".
+    Summary:
+	inferred   1 Multiplexer(s).
+Unit <Fetch> synthesized.
+
+Synthesizing Unit <Left_2_Shifter>.
+    Related source file is "D:\Codes\Verilog\CPU\Left2Shifter.v".
+WARNING:Xst:647 - Input <addr<31:30>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Summary:
+	no macro.
+Unit <Left_2_Shifter> synthesized.
+
+Synthesizing Unit <ADD32>.
+    Related source file is "D:\Codes\Verilog\CPU\ADD32.v".
+    Found 32-bit adder for signal <C> created at line 26.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+Unit <ADD32> synthesized.
+
+Synthesizing Unit <Joint_Addr>.
+    Related source file is "D:\Codes\Verilog\CPU\JointAddr.v".
+WARNING:Xst:647 - Input <PC<27:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <Instruction<31:26>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Summary:
+	no macro.
+Unit <Joint_Addr> synthesized.
+
+Synthesizing Unit <MUX32_4_1>.
+    Related source file is "D:\Codes\Verilog\CPU\MUX_32_4_1.v".
+    Found 32-bit 4-to-1 multiplexer for signal <out> created at line 24.
+    Summary:
+	inferred   1 Multiplexer(s).
+Unit <MUX32_4_1> synthesized.
+
+Synthesizing Unit <PC>.
+    Related source file is "D:\Codes\Verilog\CPU\PC.v".
+    Found 32-bit register for signal <PC_reg>.
+    Summary:
+	inferred  32 D-type flip-flop(s).
+Unit <PC> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 2
+ 32-bit adder                                          : 2
+# Registers                                            : 1
+ 32-bit register                                       : 1
+# Multiplexers                                         : 2
+ 2-bit 2-to-1 multiplexer                              : 1
+ 32-bit 4-to-1 multiplexer                             : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 2
+ 32-bit adder                                          : 2
+# Registers                                            : 32
+ Flip-Flops                                            : 32
+# Multiplexers                                         : 1
+ 32-bit 4-to-1 multiplexer                             : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <PC> ...
+
+Optimizing unit <Fetch> ...
+WARNING:Xst:1710 - FF/Latch <PC/PC_reg_1> (without init value) has a constant value of 0 in block <Fetch>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <PC/PC_reg_0> (without init value) has a constant value of 0 in block <Fetch>. This FF/Latch will be trimmed during the optimization process.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block Fetch, actual ratio is 0.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 30
+ Flip-Flops                                            : 30
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : Fetch.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 210
+#      GND                         : 1
+#      INV                         : 1
+#      LUT1                        : 29
+#      LUT2                        : 30
+#      LUT6                        : 30
+#      MUXCY                       : 58
+#      VCC                         : 1
+#      XORCY                       : 60
+# FlipFlops/Latches                : 30
+#      FDR                         : 30
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 92
+#      IBUF                        : 60
+#      OBUF                        : 32
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx45csg484-3 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:              30  out of  54576     0%  
+ Number of Slice LUTs:                   90  out of  27288     0%  
+    Number used as Logic:                90  out of  27288     0%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:     90
+   Number with an unused Flip Flop:      60  out of     90    66%  
+   Number with an unused LUT:             0  out of     90     0%  
+   Number of fully used LUT-FF pairs:    30  out of     90    33%  
+   Number of unique control sets:         1
+
+IO Utilization: 
+ Number of IOs:                         101
+ Number of bonded IOBs:                  93  out of    320    29%  
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+Clock                              | BUFGP                  | 30    |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -3
+
+   Minimum period: 4.195ns (Maximum Frequency: 238.359MHz)
+   Minimum input arrival time before clock: 3.880ns
+   Maximum output required time after clock: 3.668ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'Clock'
+  Clock period: 4.195ns (frequency: 238.359MHz)
+  Total number of paths / destination ports: 9924 / 30
+-------------------------------------------------------------------------
+Delay:               4.195ns (Levels of Logic = 34)
+  Source:            PC/PC_reg_2 (FF)
+  Destination:       PC/PC_reg_31 (FF)
+  Source Clock:      Clock rising
+  Destination Clock: Clock rising
+
+  Data Path: PC/PC_reg_2 to PC/PC_reg_31
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              2   0.447   0.616  PC/PC_reg_2 (PC/PC_reg_2)
+     INV:I->O              1   0.206   0.000  PCAdder/Madd_C_lut<2>_INV_0 (PCAdder/Madd_C_lut<2>)
+     MUXCY:S->O            1   0.172   0.000  PCAdder/Madd_C_cy<2> (PCAdder/Madd_C_cy<2>)
+     MUXCY:CI->O           1   0.019   0.000  PCAdder/Madd_C_cy<3> (PCAdder/Madd_C_cy<3>)
+     MUXCY:CI->O           1   0.019   0.000  PCAdder/Madd_C_cy<4> (PCAdder/Madd_C_cy<4>)
+     MUXCY:CI->O           1   0.019   0.000  PCAdder/Madd_C_cy<5> (PCAdder/Madd_C_cy<5>)
+     MUXCY:CI->O           1   0.019   0.000  PCAdder/Madd_C_cy<6> (PCAdder/Madd_C_cy<6>)
+     MUXCY:CI->O           1   0.019   0.000  PCAdder/Madd_C_cy<7> (PCAdder/Madd_C_cy<7>)
+     MUXCY:CI->O           1   0.019   0.000  PCAdder/Madd_C_cy<8> (PCAdder/Madd_C_cy<8>)
+     MUXCY:CI->O           1   0.019   0.000  PCAdder/Madd_C_cy<9> (PCAdder/Madd_C_cy<9>)
+     MUXCY:CI->O           1   0.019   0.000  PCAdder/Madd_C_cy<10> (PCAdder/Madd_C_cy<10>)
+     MUXCY:CI->O           1   0.019   0.000  PCAdder/Madd_C_cy<11> (PCAdder/Madd_C_cy<11>)
+     MUXCY:CI->O           1   0.019   0.000  PCAdder/Madd_C_cy<12> (PCAdder/Madd_C_cy<12>)
+     MUXCY:CI->O           1   0.019   0.000  PCAdder/Madd_C_cy<13> (PCAdder/Madd_C_cy<13>)
+     MUXCY:CI->O           1   0.019   0.000  PCAdder/Madd_C_cy<14> (PCAdder/Madd_C_cy<14>)
+     MUXCY:CI->O           1   0.019   0.000  PCAdder/Madd_C_cy<15> (PCAdder/Madd_C_cy<15>)
+     MUXCY:CI->O           1   0.019   0.000  PCAdder/Madd_C_cy<16> (PCAdder/Madd_C_cy<16>)
+     MUXCY:CI->O           1   0.019   0.000  PCAdder/Madd_C_cy<17> (PCAdder/Madd_C_cy<17>)
+     MUXCY:CI->O           1   0.019   0.000  PCAdder/Madd_C_cy<18> (PCAdder/Madd_C_cy<18>)
+     MUXCY:CI->O           1   0.019   0.000  PCAdder/Madd_C_cy<19> (PCAdder/Madd_C_cy<19>)
+     MUXCY:CI->O           1   0.019   0.000  PCAdder/Madd_C_cy<20> (PCAdder/Madd_C_cy<20>)
+     MUXCY:CI->O           1   0.019   0.000  PCAdder/Madd_C_cy<21> (PCAdder/Madd_C_cy<21>)
+     MUXCY:CI->O           1   0.019   0.000  PCAdder/Madd_C_cy<22> (PCAdder/Madd_C_cy<22>)
+     MUXCY:CI->O           1   0.019   0.000  PCAdder/Madd_C_cy<23> (PCAdder/Madd_C_cy<23>)
+     MUXCY:CI->O           1   0.019   0.000  PCAdder/Madd_C_cy<24> (PCAdder/Madd_C_cy<24>)
+     MUXCY:CI->O           1   0.019   0.000  PCAdder/Madd_C_cy<25> (PCAdder/Madd_C_cy<25>)
+     MUXCY:CI->O           1   0.019   0.000  PCAdder/Madd_C_cy<26> (PCAdder/Madd_C_cy<26>)
+     MUXCY:CI->O           1   0.019   0.000  PCAdder/Madd_C_cy<27> (PCAdder/Madd_C_cy<27>)
+     MUXCY:CI->O           1   0.019   0.000  PCAdder/Madd_C_cy<28> (PCAdder/Madd_C_cy<28>)
+     MUXCY:CI->O           1   0.019   0.000  PCAdder/Madd_C_cy<29> (PCAdder/Madd_C_cy<29>)
+     XORCY:CI->O           2   0.180   0.617  PCAdder/Madd_C_xor<30> (pc_plus4<30>)
+     LUT2:I1->O            1   0.205   0.000  BrachAddrGetter/Madd_C_lut<30> (BrachAddrGetter/Madd_C_lut<30>)
+     MUXCY:S->O            0   0.172   0.000  BrachAddrGetter/Madd_C_cy<30> (BrachAddrGetter/Madd_C_cy<30>)
+     XORCY:CI->O           1   0.180   0.580  BrachAddrGetter/Madd_C_xor<31> (br_addr_result<31>)
+     LUT6:I5->O            1   0.205   0.000  NextPcGetter/Mmux_out251 (next_pc<31>)
+     FDR:D                     0.102          PC/PC_reg_31
+    ----------------------------------------
+    Total                      4.195ns (2.382ns logic, 1.813ns route)
+                                       (56.8% logic, 43.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'Clock'
+  Total number of paths / destination ports: 611 / 60
+-------------------------------------------------------------------------
+Offset:              3.880ns (Levels of Logic = 33)
+  Source:            br_imm<0> (PAD)
+  Destination:       PC/PC_reg_31 (FF)
+  Destination Clock: Clock rising
+
+  Data Path: br_imm<0> to PC/PC_reg_31
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.222   0.684  br_imm_0_IBUF (br_imm_0_IBUF)
+     LUT2:I0->O            1   0.203   0.000  BrachAddrGetter/Madd_C_lut<2> (BrachAddrGetter/Madd_C_lut<2>)
+     MUXCY:S->O            1   0.172   0.000  BrachAddrGetter/Madd_C_cy<2> (BrachAddrGetter/Madd_C_cy<2>)
+     MUXCY:CI->O           1   0.019   0.000  BrachAddrGetter/Madd_C_cy<3> (BrachAddrGetter/Madd_C_cy<3>)
+     MUXCY:CI->O           1   0.019   0.000  BrachAddrGetter/Madd_C_cy<4> (BrachAddrGetter/Madd_C_cy<4>)
+     MUXCY:CI->O           1   0.019   0.000  BrachAddrGetter/Madd_C_cy<5> (BrachAddrGetter/Madd_C_cy<5>)
+     MUXCY:CI->O           1   0.019   0.000  BrachAddrGetter/Madd_C_cy<6> (BrachAddrGetter/Madd_C_cy<6>)
+     MUXCY:CI->O           1   0.019   0.000  BrachAddrGetter/Madd_C_cy<7> (BrachAddrGetter/Madd_C_cy<7>)
+     MUXCY:CI->O           1   0.019   0.000  BrachAddrGetter/Madd_C_cy<8> (BrachAddrGetter/Madd_C_cy<8>)
+     MUXCY:CI->O           1   0.019   0.000  BrachAddrGetter/Madd_C_cy<9> (BrachAddrGetter/Madd_C_cy<9>)
+     MUXCY:CI->O           1   0.019   0.000  BrachAddrGetter/Madd_C_cy<10> (BrachAddrGetter/Madd_C_cy<10>)
+     MUXCY:CI->O           1   0.019   0.000  BrachAddrGetter/Madd_C_cy<11> (BrachAddrGetter/Madd_C_cy<11>)
+     MUXCY:CI->O           1   0.019   0.000  BrachAddrGetter/Madd_C_cy<12> (BrachAddrGetter/Madd_C_cy<12>)
+     MUXCY:CI->O           1   0.019   0.000  BrachAddrGetter/Madd_C_cy<13> (BrachAddrGetter/Madd_C_cy<13>)
+     MUXCY:CI->O           1   0.019   0.000  BrachAddrGetter/Madd_C_cy<14> (BrachAddrGetter/Madd_C_cy<14>)
+     MUXCY:CI->O           1   0.019   0.000  BrachAddrGetter/Madd_C_cy<15> (BrachAddrGetter/Madd_C_cy<15>)
+     MUXCY:CI->O           1   0.019   0.000  BrachAddrGetter/Madd_C_cy<16> (BrachAddrGetter/Madd_C_cy<16>)
+     MUXCY:CI->O           1   0.019   0.000  BrachAddrGetter/Madd_C_cy<17> (BrachAddrGetter/Madd_C_cy<17>)
+     MUXCY:CI->O           1   0.019   0.000  BrachAddrGetter/Madd_C_cy<18> (BrachAddrGetter/Madd_C_cy<18>)
+     MUXCY:CI->O           1   0.019   0.000  BrachAddrGetter/Madd_C_cy<19> (BrachAddrGetter/Madd_C_cy<19>)
+     MUXCY:CI->O           1   0.019   0.000  BrachAddrGetter/Madd_C_cy<20> (BrachAddrGetter/Madd_C_cy<20>)
+     MUXCY:CI->O           1   0.019   0.000  BrachAddrGetter/Madd_C_cy<21> (BrachAddrGetter/Madd_C_cy<21>)
+     MUXCY:CI->O           1   0.019   0.000  BrachAddrGetter/Madd_C_cy<22> (BrachAddrGetter/Madd_C_cy<22>)
+     MUXCY:CI->O           1   0.019   0.000  BrachAddrGetter/Madd_C_cy<23> (BrachAddrGetter/Madd_C_cy<23>)
+     MUXCY:CI->O           1   0.019   0.000  BrachAddrGetter/Madd_C_cy<24> (BrachAddrGetter/Madd_C_cy<24>)
+     MUXCY:CI->O           1   0.019   0.000  BrachAddrGetter/Madd_C_cy<25> (BrachAddrGetter/Madd_C_cy<25>)
+     MUXCY:CI->O           1   0.019   0.000  BrachAddrGetter/Madd_C_cy<26> (BrachAddrGetter/Madd_C_cy<26>)
+     MUXCY:CI->O           1   0.019   0.000  BrachAddrGetter/Madd_C_cy<27> (BrachAddrGetter/Madd_C_cy<27>)
+     MUXCY:CI->O           1   0.019   0.000  BrachAddrGetter/Madd_C_cy<28> (BrachAddrGetter/Madd_C_cy<28>)
+     MUXCY:CI->O           1   0.019   0.000  BrachAddrGetter/Madd_C_cy<29> (BrachAddrGetter/Madd_C_cy<29>)
+     MUXCY:CI->O           0   0.019   0.000  BrachAddrGetter/Madd_C_cy<30> (BrachAddrGetter/Madd_C_cy<30>)
+     XORCY:CI->O           1   0.180   0.580  BrachAddrGetter/Madd_C_xor<31> (br_addr_result<31>)
+     LUT6:I5->O            1   0.205   0.000  NextPcGetter/Mmux_out251 (next_pc<31>)
+     FDR:D                     0.102          PC/PC_reg_31
+    ----------------------------------------
+    Total                      3.880ns (2.616ns logic, 1.264ns route)
+                                       (67.4% logic, 32.6% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'Clock'
+  Total number of paths / destination ports: 30 / 30
+-------------------------------------------------------------------------
+Offset:              3.668ns (Levels of Logic = 1)
+  Source:            PC/PC_reg_31 (FF)
+  Destination:       addr<31> (PAD)
+  Source Clock:      Clock rising
+
+  Data Path: PC/PC_reg_31 to addr<31>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              3   0.447   0.650  PC/PC_reg_31 (PC/PC_reg_31)
+     OBUF:I->O                 2.571          addr_31_OBUF (addr<31>)
+    ----------------------------------------
+    Total                      3.668ns (3.018ns logic, 0.650ns route)
+                                       (82.3% logic, 17.7% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock Clock
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+Clock          |    4.195|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 6.00 secs
+Total CPU time to Xst completion: 6.27 secs
+ 
+--> 
+
+Total memory usage is 4525256 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    5 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

@@ -1,0 +1,3 @@
+verilog isim_temp "RegFile.v"
+verilog isim_temp "TestRegFile.v"
+verilog isim_temp "D:/Tools/xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v"

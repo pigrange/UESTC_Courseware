@@ -1,0 +1,103 @@
+xst -intstyle ise -ifn "D:/CPU/Fetch.xst" -ofn "D:/CPU/Fetch.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx45-csg484-3 Fetch.ngc Fetch.ngd  
+map -intstyle ise -p xc6slx45-csg484-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o Fetch_map.ncd Fetch.ngd Fetch.pcf 
+par -w -intstyle ise -ol high -mt off Fetch_map.ncd Fetch.ncd Fetch.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml Fetch.twx Fetch.ncd -o Fetch.twr Fetch.pcf 
+xst -intstyle ise -ifn "D:/CPU/Fetch.xst" -ofn "D:/CPU/Fetch.syr" 
+xst -intstyle ise -ifn "D:/CPU/Fetch.xst" -ofn "D:/CPU/Fetch.syr" 
+xst -intstyle ise -ifn "D:/CPU/Fetch.xst" -ofn "D:/CPU/Fetch.syr" 
+xst -intstyle ise -ifn "D:/CPU/Fetch.xst" -ofn "D:/CPU/Fetch.syr" 
+xst -intstyle ise -ifn "D:/CPU/Fetch.xst" -ofn "D:/CPU/Fetch.syr" 
+xst -intstyle ise -ifn "D:/CPU/Fetch.xst" -ofn "D:/CPU/Fetch.syr" 
+xst -intstyle ise -ifn "D:/CPU/Fetch.xst" -ofn "D:/CPU/Fetch.syr" 
+xst -intstyle ise -ifn "D:/CPU/Fetch.xst" -ofn "D:/CPU/Fetch.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx45-csg484-3 Fetch.ngc Fetch.ngd  
+map -intstyle ise -p xc6slx45-csg484-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o Fetch_map.ncd Fetch.ngd Fetch.pcf 
+par -w -intstyle ise -ol high -mt off Fetch_map.ncd Fetch.ncd Fetch.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml Fetch.twx Fetch.ncd -o Fetch.twr Fetch.pcf 
+xst -intstyle ise -ifn "D:/CPU/Fetch.xst" -ofn "D:/CPU/Fetch.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx45-csg484-3 Fetch.ngc Fetch.ngd  
+map -intstyle ise -p xc6slx45-csg484-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o Fetch_map.ncd Fetch.ngd Fetch.pcf 
+par -w -intstyle ise -ol high -mt off Fetch_map.ncd Fetch.ncd Fetch.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml Fetch.twx Fetch.ncd -o Fetch.twr Fetch.pcf 
+xst -intstyle ise -ifn "D:/CPU/Fetch.xst" -ofn "D:/CPU/Fetch.syr" 
+xst -intstyle ise -ifn "D:/CPU/Fetch.xst" -ofn "D:/CPU/Fetch.syr" 
+xst -intstyle ise -ifn "D:/CPU/Fetch.xst" -ofn "D:/CPU/Fetch.syr" 
+xst -intstyle ise -ifn "D:/CPU/Fetch.xst" -ofn "D:/CPU/Fetch.syr" 
+xst -intstyle ise -ifn "D:/CPU/Fetch.xst" -ofn "D:/CPU/Fetch.syr" 
+xst -intstyle ise -ifn "D:/CPU/Fetch.xst" -ofn "D:/CPU/Fetch.syr" 
+xst -intstyle ise -ifn "D:/CPU/Fetch.xst" -ofn "D:/CPU/Fetch.syr" 
+xst -intstyle ise -ifn "D:/CPU/Fetch.xst" -ofn "D:/CPU/Fetch.syr" 
+xst -intstyle ise -ifn "D:/CPU/Fetch.xst" -ofn "D:/CPU/Fetch.syr" 
+xst -intstyle ise -ifn "D:/CPU/Fetch.xst" -ofn "D:/CPU/Fetch.syr" 
+xst -intstyle ise -ifn "D:/CPU/Fetch.xst" -ofn "D:/CPU/Fetch.syr" 
+xst -intstyle ise -ifn "D:/CPU/Fetch.xst" -ofn "D:/CPU/Fetch.syr" 
+xst -intstyle ise -ifn "D:/CPU/Fetch.xst" -ofn "D:/CPU/Fetch.syr" 
+xst -intstyle ise -ifn "D:/CPU/Fetch.xst" -ofn "D:/CPU/Fetch.syr" 
+xst -intstyle ise -ifn "D:/CPU/Fetch.xst" -ofn "D:/CPU/Fetch.syr" 
+xst -intstyle ise -ifn "D:/CPU/Fetch.xst" -ofn "D:/CPU/Fetch.syr" 
+xst -intstyle ise -ifn "D:/CPU/Fetch.xst" -ofn "D:/CPU/Fetch.syr" 
+xst -intstyle ise -ifn "D:/CPU/Fetch.xst" -ofn "D:/CPU/Fetch.syr" 
+xst -intstyle ise -ifn "D:/CPU/Fetch.xst" -ofn "D:/CPU/Fetch.syr" 
+xst -intstyle ise -ifn "D:/CPU/Fetch.xst" -ofn "D:/CPU/Fetch.syr" 
+xst -intstyle ise -ifn "D:/CPU/Fetch.xst" -ofn "D:/CPU/Fetch.syr" 
+xst -intstyle ise -ifn "D:/CPU/Fetch.xst" -ofn "D:/CPU/Fetch.syr" 
+xst -intstyle ise -ifn "D:/CPU/Fetch.xst" -ofn "D:/CPU/Fetch.syr" 
+xst -intstyle ise -ifn "D:/CPU/Fetch.xst" -ofn "D:/CPU/Fetch.syr" 
+xst -intstyle ise -ifn "D:/CPU/Fetch.xst" -ofn "D:/CPU/Fetch.syr" 
+xst -intstyle ise -ifn "D:/CPU/Fetch.xst" -ofn "D:/CPU/Fetch.syr" 
+xst -intstyle ise -ifn "D:/CPU/Fetch.xst" -ofn "D:/CPU/Fetch.syr" 
+xst -intstyle ise -ifn "D:/CPU/Fetch.xst" -ofn "D:/CPU/Fetch.syr" 
+xst -intstyle ise -ifn "D:/CPU/Fetch.xst" -ofn "D:/CPU/Fetch.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx45-csg484-3 Fetch.ngc Fetch.ngd  
+map -intstyle ise -p xc6slx45-csg484-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o Fetch_map.ncd Fetch.ngd Fetch.pcf 
+par -w -intstyle ise -ol high -mt off Fetch_map.ncd Fetch.ncd Fetch.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml Fetch.twx Fetch.ncd -o Fetch.twr Fetch.pcf 
+xst -intstyle ise -ifn "D:/CPU/Fetch.xst" -ofn "D:/CPU/Fetch.syr" 
+xst -intstyle ise -ifn "D:/CPU/Fetch.xst" -ofn "D:/CPU/Fetch.syr" 
+xst -intstyle ise -ifn "D:/CPU/Fetch.xst" -ofn "D:/CPU/Fetch.syr" 
+xst -intstyle ise -ifn "D:/CPU/Fetch.xst" -ofn "D:/CPU/Fetch.syr" 
+xst -intstyle ise -ifn "D:/CPU/Fetch.xst" -ofn "D:/CPU/Fetch.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx45-csg484-3 Fetch.ngc Fetch.ngd  
+map -intstyle ise -p xc6slx45-csg484-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o Fetch_map.ncd Fetch.ngd Fetch.pcf 
+par -w -intstyle ise -ol high -mt off Fetch_map.ncd Fetch.ncd Fetch.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml Fetch.twx Fetch.ncd -o Fetch.twr Fetch.pcf 
+xst -intstyle ise -ifn "D:/CPU/Fetch.xst" -ofn "D:/CPU/Fetch.syr" 
+xst -intstyle ise -ifn "D:/CPU/Fetch.xst" -ofn "D:/CPU/Fetch.syr" 
+xst -intstyle ise -ifn "D:/CPU/Fetch.xst" -ofn "D:/CPU/Fetch.syr" 
+xst -intstyle ise -ifn "D:/CPU/Fetch.xst" -ofn "D:/CPU/Fetch.syr" 
+xst -intstyle ise -ifn "D:/CPU/Fetch.xst" -ofn "D:/CPU/Fetch.syr" 
+xst -intstyle ise -ifn "D:/CPU/Fetch.xst" -ofn "D:/CPU/Fetch.syr" 
+xst -intstyle ise -ifn "D:/CPU/Fetch.xst" -ofn "D:/CPU/Fetch.syr" 
+xst -intstyle ise -ifn "D:/CPU/Fetch.xst" -ofn "D:/CPU/Fetch.syr" 
+xst -intstyle ise -ifn "D:/CPU/Fetch.xst" -ofn "D:/CPU/Fetch.syr" 
+xst -intstyle ise -ifn "D:/CPU/Fetch.xst" -ofn "D:/CPU/Fetch.syr" 
+xst -intstyle ise -ifn "D:/CPU/Fetch.xst" -ofn "D:/CPU/Fetch.syr" 
+xst -intstyle ise -ifn "D:/CPU/Fetch.xst" -ofn "D:/CPU/Fetch.syr" 
+xst -intstyle ise -ifn "D:/CPU/Fetch.xst" -ofn "D:/CPU/Fetch.syr" 
+xst -intstyle ise -ifn "D:/CPU/Fetch.xst" -ofn "D:/CPU/Fetch.syr" 
+xst -intstyle ise -ifn "D:/CPU/Fetch.xst" -ofn "D:/CPU/Fetch.syr" 
+xst -intstyle ise -ifn "D:/CPU/Fetch.xst" -ofn "D:/CPU/Fetch.syr" 
+xst -intstyle ise -ifn "D:/CPU/Fetch.xst" -ofn "D:/CPU/Fetch.syr" 
+xst -intstyle ise -ifn "D:/CPU/Fetch.xst" -ofn "D:/CPU/Fetch.syr" 
+xst -intstyle ise -ifn "D:/CPU/Fetch.xst" -ofn "D:/CPU/Fetch.syr" 
+xst -intstyle ise -ifn "D:/CPU/Fetch.xst" -ofn "D:/CPU/Fetch.syr" 
+xst -intstyle ise -ifn "D:/CPU/Fetch.xst" -ofn "D:/CPU/Fetch.syr" 
+xst -intstyle ise -ifn "D:/CPU/Fetch.xst" -ofn "D:/CPU/Fetch.syr" 
+xst -intstyle ise -ifn "D:/CPU/Fetch.xst" -ofn "D:/CPU/Fetch.syr" 
+xst -intstyle ise -ifn "D:/CPU/Fetch.xst" -ofn "D:/CPU/Fetch.syr" 
+xst -intstyle ise -ifn "D:/CPU/Fetch.xst" -ofn "D:/CPU/Fetch.syr" 
+xst -intstyle ise -ifn "D:/Codes/Verilog/CPU/Fetch.xst" -ofn "D:/Codes/Verilog/CPU/Fetch.syr" 
+xst -intstyle ise -ifn "D:/Codes/Verilog/CPU/Fetch.xst" -ofn "D:/Codes/Verilog/CPU/Fetch.syr" 
+xst -intstyle ise -ifn "D:/Codes/Verilog/CPU/Fetch.xst" -ofn "D:/Codes/Verilog/CPU/Fetch.syr" 
+xst -intstyle ise -ifn "D:/Codes/Verilog/CPU/Fetch.xst" -ofn "D:/Codes/Verilog/CPU/Fetch.syr" 
+xst -intstyle ise -ifn "D:/Codes/Verilog/CPU/Fetch.xst" -ofn "D:/Codes/Verilog/CPU/Fetch.syr" 
+xst -intstyle ise -ifn "D:/Codes/Verilog/CPU/Fetch.xst" -ofn "D:/Codes/Verilog/CPU/Fetch.syr" 
+xst -intstyle ise -ifn "D:/Codes/Verilog/CPU/Fetch.xst" -ofn "D:/Codes/Verilog/CPU/Fetch.syr" 
+xst -intstyle ise -ifn "D:/Codes/Verilog/CPU/Fetch.xst" -ofn "D:/Codes/Verilog/CPU/Fetch.syr" 
+xst -intstyle ise -ifn "D:/Codes/Verilog/CPU/Fetch.xst" -ofn "D:/Codes/Verilog/CPU/Fetch.syr" 
+xst -intstyle ise -ifn "D:/Codes/Verilog/CPU/Fetch.xst" -ofn "D:/Codes/Verilog/CPU/Fetch.syr" 
+xst -intstyle ise -ifn "D:/Codes/Verilog/CPU/Fetch.xst" -ofn "D:/Codes/Verilog/CPU/Fetch.syr" 
+xst -intstyle ise -ifn "D:/Codes/Verilog/CPU/Fetch.xst" -ofn "D:/Codes/Verilog/CPU/Fetch.syr" 
+xst -intstyle ise -ifn "D:/Codes/Verilog/CPU/Fetch.xst" -ofn "D:/Codes/Verilog/CPU/Fetch.syr" 
+xst -intstyle ise -ifn "D:/Codes/Verilog/CPU/Fetch.xst" -ofn "D:/Codes/Verilog/CPU/Fetch.syr" 

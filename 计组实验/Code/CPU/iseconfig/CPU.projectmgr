@@ -1,0 +1,170 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!--This is an ISE project configuration file.-->
+<!--It holds project specific layout data for the projectmgr plugin.-->
+<!--Copyright (c) 1995-2009 Xilinx, Inc.  All rights reserved.-->
+<Project version="2" owner="projectmgr" name="CPU" >
+   <!--This is an ISE project configuration file.-->
+   <ItemView engineview="SynthesisOnly" guiview="Source" compilemode="AutoCompile" >
+      <ClosedNodes>
+         <ClosedNodesVersion>2</ClosedNodesVersion>
+         <ClosedNode>/Computer D:|CPU|Computer.v/cpu - MIPS_CPU</ClosedNode>
+         <ClosedNode>/Computer D:|Codes|Verilog|CPU|Computer.v/cpu - MIPS_CPU</ClosedNode>
+         <ClosedNode>/Computer D:|Codes|Verilog|CPU|Computer.v/cpu - MIPS_CPU/ControlUnit - Control_Unit</ClosedNode>
+         <ClosedNode>/Computer D:|Codes|Verilog|CPU|Computer.v/cpu - MIPS_CPU/Fetch - Fetch</ClosedNode>
+         <ClosedNode>/Computer D:|Codes|Verilog|CPU|Computer.v/cpu - MIPS_CPU/U0 - Fetch</ClosedNode>
+         <ClosedNode>/Computer D:|Codes|Verilog|CPU|Computer.v/cpu - MIPS_CPU/U1 - Control_Unit</ClosedNode>
+         <ClosedNode>/MIPS_CPU D:|CPU|MIPS_CPU.v/U0 - Fetch</ClosedNode>
+         <ClosedNode>/MIPS_CPU D:|CPU|MIPS_CPU.v/U1 - Control_Unit</ClosedNode>
+         <ClosedNode>/SOC D:|Codes|Verilog|CPU|Computer.v/cpu - MIPS_CPU</ClosedNode>
+         <ClosedNode>/SOC D:|Codes|Verilog|CPU|SOC.v/cpu - MIPS_CPU</ClosedNode>
+         <ClosedNode>/SOC D:|Codes|Verilog|CPU|SOC.v/cpu - MIPS_CPU/ControlUnit - Control_Unit</ClosedNode>
+      </ClosedNodes>
+      <SelectedItems>
+         <SelectedItem>SOC (D:/Codes/Verilog/CPU/SOC.v)</SelectedItem>
+      </SelectedItems>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000020200000001000000010000006400000198000000020000000000000000000000000200000064ffffffff000000810000000300000002000001980000000100000003000000000000000100000003</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
+      <CurrentItem>SOC (D:/Codes/Verilog/CPU/SOC.v)</CurrentItem>
+   </ItemView>
+   <ItemView engineview="SynthesisOnly" sourcetype="DESUT_VERILOG" guiview="Process" >
+      <ClosedNodes>
+         <ClosedNodesVersion>1</ClosedNodesVersion>
+         <ClosedNode>Configure Target Device</ClosedNode>
+         <ClosedNode>Design Utilities</ClosedNode>
+         <ClosedNode>Implement Design</ClosedNode>
+         <ClosedNode>User Constraints</ClosedNode>
+      </ClosedNodes>
+      <SelectedItems>
+         <SelectedItem>View RTL Schematic</SelectedItem>
+      </SelectedItems>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000000000000000000016a000000010000000100000000000000000000000064ffffffff0000008100000000000000010000016a0000000100000000</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem>View RTL Schematic</CurrentItem>
+   </ItemView>
+   <ItemView guiview="File" >
+      <ClosedNodes>
+         <ClosedNodesVersion>1</ClosedNodesVersion>
+      </ClosedNodes>
+      <SelectedItems/>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000001000000000000000000000000000000000000038e000000040101000100000000000000000000000064ffffffff0000008100000000000000040000007c00000001000000000000005a0000000100000000000000780000000100000000000002400000000100000000</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem>TestSOC.v</CurrentItem>
+   </ItemView>
+   <ItemView guiview="Library" >
+      <ClosedNodes>
+         <ClosedNodesVersion>1</ClosedNodesVersion>
+         <ClosedNode>work</ClosedNode>
+      </ClosedNodes>
+      <SelectedItems/>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000000000000001000000000000000000000000000000000000016a000000010001000100000000000000000000000064ffffffff0000008100000000000000010000016a0000000100000000</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem>work</CurrentItem>
+   </ItemView>
+   <SourceProcessView>000000ff0000000000000002000001fe000000cb01000000050100000002</SourceProcessView>
+   <CurrentView>Implementation</CurrentView>
+   <ItemView engineview="SynthesisOnly" sourcetype="" guiview="Process" >
+      <ClosedNodes>
+         <ClosedNodesVersion>1</ClosedNodesVersion>
+         <ClosedNode>Design Utilities</ClosedNode>
+      </ClosedNodes>
+      <SelectedItems>
+         <SelectedItem/>
+      </SelectedItems>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000000000000000000016a000000010000000100000000000000000000000064ffffffff0000008100000000000000010000016a0000000100000000</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem/>
+   </ItemView>
+   <ItemView engineview="SynthesisOnly" sourcetype="DESUT_VHDL_ARCHITECTURE" guiview="Process" >
+      <ClosedNodes>
+         <ClosedNodesVersion>1</ClosedNodesVersion>
+         <ClosedNode>Design Utilities</ClosedNode>
+      </ClosedNodes>
+      <SelectedItems>
+         <SelectedItem/>
+      </SelectedItems>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000123000000010000000100000000000000000000000064ffffffff000000810000000000000001000001230000000100000000</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem/>
+   </ItemView>
+   <ItemView engineview="BehavioralSim" guiview="Source" compilemode="AutoCompile" >
+      <ClosedNodes>
+         <ClosedNodesVersion>2</ClosedNodesVersion>
+         <ClosedNode>/Computer D:|CPU|Computer.v/cpu - MIPS_CPU/U1 - Control_Unit</ClosedNode>
+         <ClosedNode>/Computer D:|Codes|Verilog|CPU|Computer.v/cpu - MIPS_CPU/ControlUnit - Control_Unit</ClosedNode>
+         <ClosedNode>/Computer D:|Codes|Verilog|CPU|Computer.v/cpu - MIPS_CPU/Fetch - Fetch</ClosedNode>
+         <ClosedNode>/Computer D:|Codes|Verilog|CPU|Computer.v/cpu - MIPS_CPU/U0 - Fetch</ClosedNode>
+         <ClosedNode>/Computer D:|Codes|Verilog|CPU|Computer.v/cpu - MIPS_CPU/U1 - Control_Unit</ClosedNode>
+         <ClosedNode>/SOC D:|Codes|Verilog|CPU|SOC.v</ClosedNode>
+         <ClosedNode>/TestALU D:|Codes|Verilog|CPU|TestALU.v</ClosedNode>
+         <ClosedNode>/TestCPU D:|Codes|Verilog|CPU|TestCPU.v</ClosedNode>
+         <ClosedNode>/TestCPU D:|Codes|Verilog|CPU|TestCPU.v/uut - MIPS_CPU/ControlUnit - Control_Unit</ClosedNode>
+         <ClosedNode>/TestCPU D:|Codes|Verilog|CPU|TestCPU.v/uut - MIPS_CPU/Fetch - Fetch</ClosedNode>
+         <ClosedNode>/TestFetch D:|Codes|Verilog|CPU|TestFetch.v</ClosedNode>
+         <ClosedNode>/TestFetch D:|Codes|Verilog|CPU|TestFetch.v/uut - Fetch</ClosedNode>
+         <ClosedNode>/TestRegFile D:|Codes|Verilog|CPU|TestRegFile.v</ClosedNode>
+         <ClosedNode>/TestRom D:|Codes|Verilog|CPU|TestRom.v</ClosedNode>
+         <ClosedNode>/TestSOC D:|Codes|Verilog|CPU|TestSOC.v/uut - SOC</ClosedNode>
+         <ClosedNode>/TestSOC D:|Codes|Verilog|CPU|TestSOC.v/uut - SOC/cpu - MIPS_CPU</ClosedNode>
+         <ClosedNode>/cpu_test D:|CPU|cpu_test.v</ClosedNode>
+         <ClosedNode>/sm_cpu D:|Codes|schoolMIPS|src|sm_cpu.v</ClosedNode>
+      </ClosedNodes>
+      <SelectedItems>
+         <SelectedItem>TestSOC (D:/Codes/Verilog/CPU/TestSOC.v)</SelectedItem>
+      </SelectedItems>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000020200000001000000010000006400000102000000020000000000000000000000000200000064ffffffff000000810000000300000002000001020000000100000003000000000000000100000003</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
+      <CurrentItem>TestSOC (D:/Codes/Verilog/CPU/TestSOC.v)</CurrentItem>
+   </ItemView>
+   <ItemView engineview="BehavioralSim" sourcetype="" guiview="Process" >
+      <ClosedNodes>
+         <ClosedNodesVersion>1</ClosedNodesVersion>
+         <ClosedNode>Design Utilities/Compile HDL Simulation Libraries</ClosedNode>
+      </ClosedNodes>
+      <SelectedItems>
+         <SelectedItem/>
+      </SelectedItems>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000000000000000000016a000000010000000100000000000000000000000064ffffffff0000008100000000000000010000016a0000000100000000</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem/>
+   </ItemView>
+   <ItemView engineview="BehavioralSim" sourcetype="DESUT_VERILOG" guiview="Process" >
+      <ClosedNodes>
+         <ClosedNodesVersion>1</ClosedNodesVersion>
+      </ClosedNodes>
+      <SelectedItems>
+         <SelectedItem>Simulate Behavioral Model</SelectedItem>
+      </SelectedItems>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000000000000000000016a000000010000000100000000000000000000000064ffffffff0000008100000000000000010000016a0000000100000000</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem>Simulate Behavioral Model</CurrentItem>
+   </ItemView>
+   <ItemView engineview="BehavioralSim" sourcetype="DESUT_VHDL_ARCHITECTURE" guiview="Process" >
+      <ClosedNodes>
+         <ClosedNodesVersion>1</ClosedNodesVersion>
+      </ClosedNodes>
+      <SelectedItems/>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" />
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem/>
+   </ItemView>
+</Project>

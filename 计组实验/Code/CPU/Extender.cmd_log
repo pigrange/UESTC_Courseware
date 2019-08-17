@@ -1,0 +1,2 @@
+xst -intstyle ise -ifn "D:/Codes/Verilog/CPU/Extender.xst" -ofn "D:/Codes/Verilog/CPU/Extender.syr" 
+xst -intstyle ise -ifn "D:/Codes/Verilog/CPU/Extender.xst" -ofn "D:/Codes/Verilog/CPU/Extender.syr" 

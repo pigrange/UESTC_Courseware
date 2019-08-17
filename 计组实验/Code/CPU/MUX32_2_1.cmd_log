@@ -1,0 +1,2 @@
+xst -intstyle ise -ifn "D:/Codes/Verilog/CPU/MUX32_2_1.xst" -ofn "D:/Codes/Verilog/CPU/MUX32_2_1.syr" 
+xst -intstyle ise -ifn "D:/Codes/Verilog/CPU/MUX32_2_1.xst" -ofn "D:/Codes/Verilog/CPU/MUX32_2_1.syr" 

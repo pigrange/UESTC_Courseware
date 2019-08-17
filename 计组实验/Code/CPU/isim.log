@@ -1,0 +1,19 @@
+ISim log file
+Running: D:\Codes\Verilog\CPU\TestSOC_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb D:/Codes/Verilog/CPU/TestSOC_isim_beh.wdb 
+INFO: There is another simulation running in the same directory. Using database file name isim1.wdb.
+ISim P.20131013 (signature 0x7708f090)
+----------------------------------------------------------------------
+WARNING:Security:42 - Your software subscription period has lapsed. Your current version of Xilinx tools will continue to function, but you no longer qualify for Xilinx software updates or new releases.
+
+
+----------------------------------------------------------------------
+This is a Full version of ISim.
+WARNING: File "D:/Codes/Verilog/CPU/Control_Unit.v" Line 30.  For instance ControlUnit/U0/, width 3 of formal port R_type is not equal to width 1 of actual signal R_type.
+Time resolution is 1 ps
+# onerror resume
+# wave add /
+# run 1000 ns
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.
+# run 10.00us
+# run 100.00us

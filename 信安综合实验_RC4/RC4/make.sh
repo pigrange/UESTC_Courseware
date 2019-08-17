@@ -1,0 +1,1 @@
+g++ -o out.exe RC4.cpp

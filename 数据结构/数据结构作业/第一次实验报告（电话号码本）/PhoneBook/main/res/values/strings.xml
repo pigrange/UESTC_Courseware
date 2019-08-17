@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">电话簿</string>
+    <string name="title_activity_creat_contacts">CreatContacts</string>
+</resources>

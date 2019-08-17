@@ -1,0 +1,4 @@
+由于7条指令系统中只有add和sub两条R型指令，局部控制器逻辑就很简单
+ALUctr<0>  = 0
+ALUctr<1>  =  0
+ALUctr<2>  = func<1>

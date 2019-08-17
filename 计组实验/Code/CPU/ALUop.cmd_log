@@ -1,0 +1,4 @@
+xst -intstyle ise -ifn "D:/CPU/ALUop.xst" -ofn "D:/CPU/ALUop.syr" 
+xst -intstyle ise -ifn "D:/Codes/Verilog/CPU/ALUop.xst" -ofn "D:/Codes/Verilog/CPU/ALUop.syr" 
+xst -intstyle ise -ifn "D:/Codes/Verilog/CPU/ALUop.xst" -ofn "D:/Codes/Verilog/CPU/ALUop.syr" 
+xst -intstyle ise -ifn "D:/Codes/Verilog/CPU/ALUop.xst" -ofn "D:/Codes/Verilog/CPU/ALUop.syr" 

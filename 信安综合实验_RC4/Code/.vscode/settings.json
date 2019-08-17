@@ -1,0 +1,14 @@
+{
+    "files.associations": {
+        "forTest.C": "cpp",
+        "stdlib.h": "c",
+        "des.h": "c",
+        "sha.h": "c",
+        "math.h": "c",
+        "stdbool.h": "c"
+    },
+    "clang-format.language.glsl.fallbackStyle": "google",
+    "clang-format.language.cpp.fallbackStyle": "google",
+    "clang-format.language.cuda.style": "google",
+    "clang-format.language.javascript.fallbackStyle": ""
+}

@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE twReport [
+<!ELEMENT twReport (twHead?, (twWarn | twDebug | twInfo)*, twBody, twSum?,
+					twDebug*, twFoot?, twClientInfo?)>
+<!ATTLIST twReport version CDATA "10,4">
+<!ELEMENT twHead (twExecVer?, twCopyright, twCmdLine?, twDesign?, twPCF?, twDevInfo, twRptInfo, twEnvVar*)>
+<!ELEMENT twExecVer (#PCDATA)>
+<!ELEMENT twCopyright (#PCDATA)>
+<!ELEMENT twCmdLine (#PCDATA)>
+<!ELEMENT twDesign (#PCDATA)>
+<!ELEMENT twPCF (#PCDATA)>
+<!ELEMENT twDevInfo (twDevName, twSpeedGrade, twSpeedVer?)>
+<!ELEMENT twDevName (#PCDATA)>
+<!ATTLIST twDevInfo arch CDATA #IMPLIED pkg CDATA #IMPLIED>
+<!ELEMENT twSpeedGrade (#PCDATA)>
+<!ELEMENT twSpeedVer (#PCDATA)>
+<!ELEMENT twRptInfo (twItemLimit?, (twUnconst, twUnconstLimit?)?)>
+<!ATTLIST twRptInfo twRptLvl (twErr | twVerbose | twTerseErr | twSum | twTimeGrp) #REQUIRED>
+<!ATTLIST twRptInfo twAdvRpt  (TRUE | FALSE) "FALSE">
+<!ATTLIST twRptInfo twTimeUnits (twPsec | twNsec | twUsec | twMsec | twSec) "twNsec">
+<!ATTLIST twRptInfo twFreqUnits (twGHz | twMHz | twHz) "twMHz">
+<!ATTLIST twRptInfo twReportMinPaths CDATA #IMPLIED>
+<!ELEMENT twItemLimit (#PCDATA)>
+<!ELEMENT twUnconst EMPTY>
+<!ELEMENT twUnconstLimit (#PCDATA)>
+<!ELEMENT twEnvVar EMPTY>
+<!ATTLIST twEnvVar name CDATA #REQUIRED>
+<!ATTLIST twEnvVar description CDATA #REQUIRED>
+<!ELEMENT twWarn (#PCDATA)>
+<!ELEMENT twInfo (#PCDATA)>
+<!ELEMENT twDebug (#PCDATA)>
+<!ELEMENT twBody (twDerating?, (twSumRpt | twVerboseRpt | twErrRpt | twTerseErrRpt | twTimeGrpRpt), twNonDedClks?)>
+<!ATTLIST twBody twFastPaths CDATA #IMPLIED>
+<!ELEMENT twDerating (twProc?, twTemp?, twVolt?)>
+<!ELEMENT twProc (#PCDATA)>
+<!ELEMENT twTemp (#PCDATA)>
+<!ELEMENT twVolt (#PCDATA)>
+<!ELEMENT twSumRpt (twConstRollupTable*, twConstList?, twConstSummaryTable?, twUnmetConstCnt?, (twWarn | twInfo | twDebug)*, twDataSheet?)>
+<!ELEMENT twErrRpt (twCycles?, (twConst | twTIG |  twConstRollupTable)*, twUnmetConstCnt?, (twWarn | twInfo | twDebug)*, twDataSheet?, twTimeGrp*)>
+<!ELEMENT twTerseErrRpt (twConstList, twUnmetConstCnt?, twDataSheet?)>
+<!ELEMENT twVerboseRpt (twCycles?, (twConst | twTIG | twConstRollupTable)*, twUnmetConstCnt?, (twWarn | twInfo | twDebug)*, twDataSheet?, twTimeGrp*)> 
+<!ELEMENT twCycles (twSigConn+)>
+<!ATTLIST twCycles twNum CDATA #REQUIRED>
+<!ELEMENT twSigConn (twSig, twDriver, twLoad)>
+<!ELEMENT twSig (#PCDATA)>
+<!ELEMENT twDriver (#PCDATA)>
+<!ELEMENT twLoad (#PCDATA)> 
+<!ELEMENT twConst (twConstHead, ((twPathRpt?,twRacePathRpt?, twPathRptBanner?)* |  (twPathRpt*, twRacePathRpt?) |  twNetRpt* | twClkSkewLimit*))>
+<!ATTLIST twConst twConstType (NET | 
+							   NETDELAY | 
+							   NETSKEW | 
+							   PATH |
+							   DEFPERIOD |
+							   UNCONSTPATH |
+							   DEFPATH | 
+							   PATH2SETUP |
+							   UNCONSTPATH2SETUP | 
+							   PATHCLASS | 
+							   PATHDELAY | 
+							   PERIOD |
+							   FREQUENCY |
+							   PATHBLOCK |
+							   OFFSET |
+							   OFFSETIN |
+							   OFFSETINCLOCK | 
+							   UNCONSTOFFSETINCLOCK |
+							   OFFSETINDELAY |
+							   OFFSETINMOD |
+							   OFFSETOUT |
+							   OFFSETOUTCLOCK |
+							   UNCONSTOFFSETOUTCLOCK | 
+							   OFFSETOUTDELAY |
+							   OFFSETOUTMOD| CLOCK_SKEW_LIMITS) #IMPLIED> 
+<!ELEMENT twConstHead (twConstName, twItemCnt, twErrCntSetup, twErrCntEndPt?, twErrCntHold,
+					   twEndPtCnt?,
+					   twPathErrCnt?, (twMinPer| twMaxDel| twMaxFreq| twMaxNetDel| twMaxNetSkew| twMinOff| twMaxOff)*)>
+<!ELEMENT twConstName (#PCDATA)>
+<!ATTLIST twConstName UCFConstName CDATA #IMPLIED>
+<!ATTLIST twConstHead uID CDATA #IMPLIED>
+<!ELEMENT twItemCnt (#PCDATA)>
+<!ELEMENT twErrCnt (#PCDATA)>
+<!ELEMENT twErrCntEndPt (#PCDATA)>
+<!ELEMENT twErrCntSetup (#PCDATA)>
+<!ELEMENT twErrCntHold (#PCDATA)>
+<!ATTLIST twErrCntHold twRaceChecked (TRUE | FALSE) "FALSE">
+<!ELEMENT twEndPtCnt (#PCDATA)>
+<!ELEMENT twPathErrCnt (#PCDATA)>
+<!ELEMENT twMinPer (#PCDATA) >
+<!ELEMENT twFootnote EMPTY>
+<!ATTLIST twFootnote number CDATA #REQUIRED>
+<!ELEMENT twMaxDel (#PCDATA)>
+<!ELEMENT twMaxFreq (#PCDATA)>
+<!ELEMENT twMinOff (#PCDATA)>
+<!ELEMENT twMaxOff (#PCDATA)>
+<!ELEMENT twTIG (twTIGHead, (twPathRpt*,twRacePathRpt?))>
+<!ELEMENT twTIGHead (twTIGName, twInstantiated, twBlocked)>
+<!ELEMENT twTIGName (#PCDATA)>
+<!ELEMENT twInstantiated (#PCDATA)>
+<!ELEMENT twBlocked (#PCDATA)>
+<!ELEMENT twRacePathRpt (twRacePath+)>
+<!ELEMENT twPathRpt (twUnconstPath | twConstPath | twUnconstOffIn | twConstOffIn | twUnconstOffOut | twConstOffOut | twModOffOut)>
+<!ELEMENT twUnconstPath (twTotDel, twSrc, twDest,  (twDel, twSUTime)?, twTotPathDel?, twClkSkew?, tw2Phase?, twClkUncert?, twDetPath?)>
+<!ATTLIST twUnconstPath twDataPathType CDATA #IMPLIED
+						twSimpleMinPath CDATA #IMPLIED>
+<!ELEMENT twTotDel (#PCDATA)>
+<!ELEMENT twSrc (#PCDATA)>
+<!ATTLIST twSrc BELType CDATA #IMPLIED>
+<!ELEMENT twDest (#PCDATA)>
+<!ATTLIST twDest BELType CDATA #IMPLIED>
+<!ELEMENT twDel (#PCDATA)>
+<!ELEMENT twSUTime (#PCDATA)>
+<!ELEMENT twTotPathDel (#PCDATA)>
+<!ELEMENT twClkSkew (#PCDATA)>
+<!ATTLIST twClkSkew dest CDATA #IMPLIED src CDATA #IMPLIED>
+<!ELEMENT twConstPath (twSlack, twSrc, twDest, twTotPathDel?, twClkSkew?, twDelConst, tw2Phase?, twClkUncert?, twDetPath?)>
+<!ATTLIST twConstPath twDataPathType CDATA "twDataPathMaxDelay">
+<!ATTLIST twConstPath constType (period | fromto | unknown) "unknown">
+<!ELEMENT twSlack (#PCDATA)>
+<!ELEMENT twDelConst (#PCDATA)>
+<!ELEMENT tw2Phase EMPTY>
+<!ELEMENT twClkUncert (#PCDATA)>
+<!ATTLIST twClkUncert fSysJit CDATA #IMPLIED  fInputJit CDATA #IMPLIED
+					  fDCMJit CDATA #IMPLIED
+					  fPhaseErr CDATA #IMPLIED
+					  sEqu CDATA #IMPLIED>
+<!ELEMENT twRacePath (twSlack, twSrc, twDest, twClkSkew, twDelConst?, twClkUncert?, twDetPath)>
+<!ELEMENT twPathRptBanner (#PCDATA)>
+<!ATTLIST twPathRptBanner sType CDATA #IMPLIED iPaths CDATA #IMPLIED iCriticalPaths CDATA #IMPLIED>
+<!ELEMENT twUnconstOffIn (twOff, twSrc, twDest, twGuaranteed?, twClkUncert?, (twDataPath, twClkPath)?)>
+<!ATTLIST twUnconstOffIn twDataPathType CDATA #IMPLIED>
+<!ELEMENT twOff (#PCDATA)>
+<!ELEMENT twGuaranteed EMPTY>
+<!ELEMENT twConstOffIn (twSlack, twSrc, twDest, ((twClkDel, twClkSrc, twClkDest) | twGuarInSetup), twOff, twOffSrc, twOffDest, twClkUncert?, (twDataPath, twClkPath)?)>
+<!ATTLIST twConstOffIn twDataPathType CDATA "twDataPathMaxDelay">
+<!ATTLIST twConstOffIn twDurationNotSpecified CDATA #IMPLIED>
+<!ELEMENT twClkDel (#PCDATA)>
+<!ELEMENT twClkSrc (#PCDATA)>
+<!ELEMENT twClkDest (#PCDATA)>
+<!ELEMENT twGuarInSetup (#PCDATA)>
+<!ELEMENT twOffSrc (#PCDATA)>
+<!ELEMENT twOffDest (#PCDATA)>
+<!ELEMENT twUnconstOffOut (twOff, twSrc, twDest, twClkUncert?, (twClkPath, twDataPath)?)>
+<!ATTLIST twUnconstOffOut twDataPathType CDATA #IMPLIED>
+<!ELEMENT twConstOffOut (twSlack, twSrc, twDest, twClkDel, twClkSrc, twClkDest, twDataDel, twDataSrc, twDataDest, twOff, twOffSrc, twOffDest, twClkUncert?, (twClkPath, twDataPath)?)>
+<!ATTLIST twConstOffOut twDataPathType CDATA "twDataPathMaxDelay">
+<!ELEMENT twDataDel (#PCDATA)>
+<!ELEMENT twDataSrc (#PCDATA)>
+<!ELEMENT twDataDest (#PCDATA)>
+<!ELEMENT twModOffOut (twSlack, twDest, twDataDel, twDataSrc, twDataDest, twClkUncert?, twDataPath?)>
+<!ELEMENT twDetPath (twSrc, twDest, twLogLvls, twSrcSite, twSrcClk?, twPathDel*, (twLogDel, twRouteDel, twTotDel)?, twDestClk?, (twPctLog, twPctRoute)?)>
+<!ATTLIST twDetPath maxSiteLen CDATA #IMPLIED>
+<!ELEMENT twDataPath (twSrc, twDest, twLogLvls, twSrcSite, twSrcClk?, twPathDel*, (twLogDel, twRouteDel, twTotDel)?, twDestClk?, (twPctLog, twPctRoute)?)>
+<!ATTLIST twDataPath maxSiteLen CDATA #IMPLIED>
+<!ELEMENT twClkPath (twSrc, twDest, twLogLvls, twSrcSite, twSrcClk?, twPathDel*, (twLogDel, twRouteDel, twTotDel)?, twDestClk?, (twPctLog, twPctRoute)?)>
+<!ATTLIST twClkPath maxSiteLen CDATA #IMPLIED>
+<!ELEMENT twLogLvls (#PCDATA)>
+<!ELEMENT twSrcSite (#PCDATA)>
+<!ELEMENT twSrcClk (#PCDATA)>
+<!ATTLIST twSrcClk twEdge (twRising | twFalling) "twRising">
+<!ATTLIST twSrcClk twArriveTime CDATA #IMPLIED>
+<!ATTLIST twSrcClk twClkRes CDATA #IMPLIED>
+<!ELEMENT twPathDel (twSite, twDelType, twFanCnt?, twDelInfo?, twComp, twNet?, twBEL*)>
+<!ATTLIST twPathDel twHoldTime (TRUE | FALSE) "FALSE">
+<!ELEMENT twDelInfo (#PCDATA)>
+<!ATTLIST twDelInfo twEdge (twRising | twFalling | twIndet) #REQUIRED>
+<!ATTLIST twDelInfo twAcc (twRouted | twEst | twApprox) "twRouted">
+<!ELEMENT twSite (#PCDATA)>
+<!ELEMENT twDelType (#PCDATA)>
+<!ELEMENT twFanCnt (#PCDATA)>
+<!ELEMENT twComp (#PCDATA)>
+<!ELEMENT twNet (#PCDATA)>
+<!ELEMENT twBEL (#PCDATA)>
+<!ELEMENT twLogDel (#PCDATA)>
+<!ELEMENT twRouteDel (#PCDATA)>
+<!ELEMENT twDestClk (#PCDATA)>
+<!ATTLIST twDestClk twEdge (twRising | twFalling) "twRising">
+<!ATTLIST twDestClk twArriveTime CDATA #IMPLIED>
+<!ATTLIST twDestClk twClkRes CDATA #IMPLIED>
+<!ELEMENT twPctLog (#PCDATA)>
+<!ELEMENT twPctRoute (#PCDATA)>
+<!ELEMENT twNetRpt (twDelNet | twSlackNet | twSkewNet)>
+<!ELEMENT twDelNet (twDel, twNet, twDetNet?)>
+<!ELEMENT twSlackNet (twSlack, twNet, twDel, twNotMet?, twTimeConst, twAbsSlack, twDetNet?)>
+<!ELEMENT twTimeConst (#PCDATA)>
+<!ELEMENT twAbsSlack (#PCDATA)>
+<!ELEMENT twSkewNet (twSlack, twNet, twSkew, twNotMet?, twTimeConst, twAbsSlack, twDetSkewNet?)>
+<!ELEMENT twSkew (#PCDATA)>
+<!ELEMENT twDetNet (twNetDel*)>
+<!ELEMENT twNetDel (twSrc, twDest, twNetDelInfo)>
+<!ELEMENT twNetDelInfo (#PCDATA)>
+<!ATTLIST twNetDelInfo twAcc (twRouted | twEst | twApprox) "twRouted">
+<!ELEMENT twDetSkewNet (twNetSkew*)>
+<!ELEMENT twNetSkew (twSrc, twDest, twNetDelInfo, twSkew)>
+<!ELEMENT twClkSkewLimit  EMPTY>
+<!ATTLIST twClkSkewLimit slack CDATA #IMPLIED skew CDATA #IMPLIED arrv1name CDATA #IMPLIED                      arrv1 CDATA #IMPLIED
+		         arrv2name CDATA #IMPLIED arrv2 CDATA #IMPLIED uncert CDATA #IMPLIED>
+<!ELEMENT twConstRollupTable (twConstRollup*)>
+<!ATTLIST twConstRollupTable uID CDATA #IMPLIED>
+<!ELEMENT twConstRollup  EMPTY>
+<!ATTLIST twConstRollup name CDATA #IMPLIED fullName CDATA #IMPLIED type CDATA #IMPLIED                      requirement CDATA #IMPLIED prefType CDATA #IMPLIED actual CDATA #IMPLIED>
+<!ATTLIST twConstRollup  actualRollup CDATA #IMPLIED                      errors CDATA #IMPLIED errorRollup CDATA #IMPLIED items CDATA #IMPLIED                      itemsRollup CDATA #IMPLIED>
+<!ELEMENT twConstList (twConstListItem)*>
+<!ELEMENT twConstListItem (twConstName, twNotMet?, twReqVal?, twActVal?, twLogLvls?)> 
+<!ATTLIST twConstListItem twUnits (twTime | twFreq) "twTime">
+<!ELEMENT twNotMet EMPTY>
+<!ELEMENT twReqVal (#PCDATA)>
+<!ELEMENT twActVal (#PCDATA)>
+<!ELEMENT twConstSummaryTable (twConstStats|twConstSummary)*>
+<!ATTLIST twConstSummaryTable twEmptyConstraints CDATA #IMPLIED>
+<!ELEMENT twConstStats (twConstName)>
+<!ATTLIST twConstStats twUnits (twTime | twFreq) "twTime">
+<!ATTLIST twConstStats twRequired CDATA #IMPLIED>
+<!ATTLIST twConstStats twActual CDATA #IMPLIED>
+<!ATTLIST twConstStats twSlack CDATA #IMPLIED>
+<!ATTLIST twConstStats twLogLvls CDATA #IMPLIED>
+<!ATTLIST twConstStats twErrors CDATA #IMPLIED>
+<!ATTLIST twConstStats twPCFIndex CDATA #IMPLIED>
+<!ATTLIST twConstStats twAbsSlackIndex CDATA #IMPLIED>
+<!ATTLIST twConstStats twTCType CDATA #IMPLIED>
+<!ELEMENT twConstSummary (twConstName, twConstData?, twConstData*)>
+<!ATTLIST twConstSummary PCFIndex CDATA #IMPLIED  slackIndex CDATA #IMPLIED>
+<!ELEMENT twConstData EMPTY>
+<!ATTLIST twConstData type CDATA #IMPLIED  units (MHz | ns) "ns" slack CDATA #IMPLIED
+					  best CDATA #IMPLIED requested CDATA #IMPLIED
+					  errors CDATA #IMPLIED
+					  score CDATA #IMPLIED>
+<!ELEMENT twTimeGrpRpt (twTimeGrp)*>
+<!ELEMENT twTimeGrp (twTimeGrpName, twCompList?, twBELList?, twMacList?, twBlockList?, twSigList?, twPinList?)>
+<!ELEMENT twTimeGrpName (#PCDATA)>
+<!ELEMENT twCompList (twCompName+)>
+<!ELEMENT twCompName (#PCDATA)>
+<!ELEMENT twSigList (twSigName+)>
+<!ELEMENT twSigName (#PCDATA)>
+<!ELEMENT twBELList (twBELName+)>
+<!ELEMENT twBELName (#PCDATA)>
+<!ELEMENT twBlockList (twBlockName+)>
+<!ELEMENT twBlockName (#PCDATA)>
+<!ELEMENT twMacList (twMacName+)>
+<!ELEMENT twMacName (#PCDATA)>
+<!ELEMENT twPinList (twPinName+)>
+<!ELEMENT twPinName (#PCDATA)>
+<!ELEMENT twUnmetConstCnt (#PCDATA)>
+<!ELEMENT twDataSheet (twSUH2ClkList*, (twClk2PadList|twClk2OutList)*, twClk2SUList*, twPad2PadList?, twOffsetTables?)>
+<!ATTLIST twDataSheet twNameLen CDATA #REQUIRED>
+<!ELEMENT twSUH2ClkList (twDest, twSUH2Clk+)>
+<!ATTLIST twSUH2ClkList twDestWidth CDATA #IMPLIED>
+<!ATTLIST twSUH2ClkList twPhaseWidth CDATA #IMPLIED>
+<!ELEMENT twSUH2Clk (twSrc, twSUHTime, twSUHTime?)> 
+<!ELEMENT twSUHTime (twSU2ClkTime?,twH2ClkTime?)>
+<!ATTLIST twSUHTime twInternalClk CDATA #IMPLIED>
+<!ATTLIST twSUHTime twClkPhase CDATA #IMPLIED>
+<!ELEMENT twSU2ClkTime (#PCDATA)>
+<!ATTLIST twSU2ClkTime twEdge (twRising | twFalling | twIndet) #REQUIRED>
+<!ELEMENT twH2ClkTime (#PCDATA)>
+<!ATTLIST twH2ClkTime twEdge (twRising | twFalling | twIndet) #REQUIRED>
+<!ELEMENT twClk2PadList (twSrc, twClk2Pad+)>
+<!ELEMENT twClk2Pad (twDest, twTime)>
+<!ELEMENT twTime (#PCDATA)>
+<!ATTLIST twTime twEdge (twRising | twFalling | twIndet) #REQUIRED>
+<!ELEMENT twClk2OutList (twSrc, twClk2Out+)>
+<!ATTLIST twClk2OutList twDestWidth CDATA #REQUIRED>
+<!ATTLIST twClk2OutList twPhaseWidth CDATA #REQUIRED>
+<!ELEMENT twClk2Out EMPTY>
+<!ATTLIST twClk2Out twOutPad CDATA #REQUIRED>
+<!ATTLIST twClk2Out twMinTime CDATA #REQUIRED>
+<!ATTLIST twClk2Out twMinEdge CDATA #REQUIRED>
+<!ATTLIST twClk2Out twMaxTime CDATA #REQUIRED>
+<!ATTLIST twClk2Out twMaxEdge CDATA #REQUIRED>
+<!ATTLIST twClk2Out twInternalClk CDATA #REQUIRED>
+<!ATTLIST twClk2Out twClkPhase CDATA #REQUIRED>
+<!ELEMENT twClk2SUList (twDest, twClk2SU+)>
+<!ATTLIST twClk2SUList twDestWidth CDATA #IMPLIED>
+<!ELEMENT twClk2SU (twSrc, twRiseRise?, twFallRise?, twRiseFall?, twFallFall?)>
+<!ELEMENT twRiseRise (#PCDATA)>
+<!ELEMENT twFallRise (#PCDATA)>
+<!ELEMENT twRiseFall (#PCDATA)>
+<!ELEMENT twFallFall (#PCDATA)>
+<!ELEMENT twPad2PadList (twPad2Pad+)>
+<!ATTLIST twPad2PadList twSrcWidth CDATA #IMPLIED>
+<!ATTLIST twPad2PadList twDestWidth CDATA #IMPLIED>
+<!ELEMENT twPad2Pad (twSrc, twDest, twDel)>
+<!ELEMENT twOffsetTables (twOffsetInTable*,twOffsetOutTable*)>
+<!ELEMENT twOffsetInTable (twConstName, twOffInTblRow*)>
+<!ATTLIST twOffsetInTable twDestWidth CDATA #IMPLIED>
+<!ATTLIST twOffsetInTable twWorstWindow CDATA #IMPLIED>
+<!ATTLIST twOffsetInTable twWorstSetup CDATA #IMPLIED>
+<!ATTLIST twOffsetInTable twWorstHold CDATA #IMPLIED>
+<!ATTLIST twOffsetInTable twWorstSetupSlack CDATA #IMPLIED>
+<!ATTLIST twOffsetInTable twWorstHoldSlack CDATA #IMPLIED>
+<!ELEMENT twOffsetOutTable (twConstName, twOffOutTblRow*)>
+<!ATTLIST twOffsetOutTable twDestWidth CDATA #IMPLIED>
+<!ATTLIST twOffsetOutTable twMinSlack CDATA #IMPLIED>
+<!ATTLIST twOffsetOutTable twMaxSlack CDATA #IMPLIED>
+<!ATTLIST twOffsetOutTable twRelSkew CDATA #IMPLIED>
+<!ELEMENT twOffInTblRow (twSrc, twSUHSlackTime*)>       
+<!ELEMENT twSUHSlackTime (twSU2ClkTime?,twH2ClkTime?)>
+<!ATTLIST twSUHSlackTime twSetupSlack CDATA #IMPLIED  twHoldSlack CDATA #IMPLIED>
+<!ELEMENT twOffOutTblRow EMPTY>
+<!ATTLIST twOffOutTblRow twOutPad CDATA #IMPLIED>
+<!ATTLIST twOffOutTblRow twSlack CDATA #IMPLIED>
+<!ATTLIST twOffOutTblRow twRelSkew CDATA #IMPLIED>
+<!ELEMENT twNonDedClks ((twWarn | twInfo), twNonDedClk+)>
+<!ELEMENT twNonDedClk (#PCDATA)>
+<!ELEMENT twSum ( twErrCnt, twScore, twConstCov, twStats)>
+<!ELEMENT twScore (#PCDATA)>
+<!ELEMENT twConstCov (twPathCnt, twNetCnt, twConnCnt, twPct?)>
+<!ELEMENT twPathCnt (#PCDATA)>
+<!ELEMENT twNetCnt (#PCDATA)>
+<!ELEMENT twConnCnt (#PCDATA)>
+<!ELEMENT twPct (#PCDATA)>
+<!ELEMENT twStats ( twMinPer?, twFootnote?, twMaxFreq?, twMaxCombDel?, twMaxFromToDel?, twMaxNetDel?, twMaxNetSkew?, twMaxInAfterClk?, twMinInBeforeClk?, twMaxOutBeforeClk?, twMinOutAfterClk?, (twInfo | twWarn)*)>
+<!ELEMENT twMaxCombDel (#PCDATA)>
+<!ELEMENT twMaxFromToDel (#PCDATA)>
+<!ELEMENT twMaxNetDel (#PCDATA)>
+<!ELEMENT twMaxNetSkew (#PCDATA)>
+<!ELEMENT twMaxInAfterClk (#PCDATA)>
+<!ELEMENT twMinInBeforeClk (#PCDATA)>
+<!ELEMENT twMaxOutBeforeClk (#PCDATA)>
+<!ELEMENT twMinOutAfterClk (#PCDATA)>
+<!ELEMENT twFoot (twFootnoteExplanation*, twTimestamp)>
+<!ELEMENT twTimestamp (#PCDATA)>
+<!ELEMENT twFootnoteExplanation EMPTY>
+<!ATTLIST twFootnoteExplanation number CDATA #REQUIRED>
+<!ATTLIST twFootnoteExplanation text CDATA #REQUIRED>
+<!ELEMENT twClientInfo (twClientName, twAttrList?)>
+<!ELEMENT twClientName (#PCDATA)>
+<!ELEMENT twAttrList (twAttrListItem)*>
+<!ELEMENT twAttrListItem (twName, twValue*)>
+<!ELEMENT twName (#PCDATA)>
+<!ELEMENT twValue (#PCDATA)>
+]>
+<twReport><twHead anchorID="1"><twExecVer>Release 14.7 Trace  (nt64)</twExecVer><twCopyright>Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.</twCopyright><twCmdLine>D:\Tools\xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\trce.exe -intstyle ise -v 3
+-s 3 -n 3 -fastpaths -xml SOC.twx SOC.ncd -o SOC.twr SOC.pcf
+
+</twCmdLine><twDesign>SOC.ncd</twDesign><twDesignPath>SOC.ncd</twDesignPath><twPCF>SOC.pcf</twPCF><twPcfPath>SOC.pcf</twPcfPath><twDevInfo arch="spartan6" pkg="csg484"><twDevName>xc6slx45</twDevName><twDevRange>C</twDevRange><twSpeedGrade>-3</twSpeedGrade><twSpeedVer>PRODUCTION 1.23 2013-10-13</twSpeedVer><twQuadDly>1</twQuadDly></twDevInfo><twRptInfo twRptLvl="twVerbose" twReportMinPaths="true"  dlyHyperLnks="t" ><twEndptLimit>3</twEndptLimit></twRptInfo><twEnvVar name="NONE" description="No environment variables were set" /></twHead><twInfo anchorID="2">INFO:Timing:2698 - No timing constraints found, doing default enumeration.</twInfo><twInfo anchorID="3">INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).</twInfo><twInfo anchorID="4">INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths option. All paths that are not constrained will be reported in the unconstrained paths section(s) of the report.</twInfo><twInfo anchorID="5">INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on a 50 Ohm transmission line loading model.  For the details of this model, and for more information on accounting for different loading conditions, please see the device datasheet.</twInfo><twBody><twVerboseRpt><twDataSheet anchorID="6" twNameLen="15"><twSUH2ClkList anchorID="7" twDestWidth="5" twPhaseWidth="11"><twDest>Clock</twDest><twSUH2Clk ><twSrc>Reset</twSrc><twSUHTime twInternalClk ="Clock_BUFGP" twClkPhase ="0.000" ><twSU2ClkTime twEdge="twRising" twCrnrFst="f">2.851</twSU2ClkTime><twH2ClkTime twEdge="twRising" twCrnrFst="f">-0.669</twH2ClkTime></twSUHTime></twSUH2Clk></twSUH2ClkList><twClk2OutList anchorID="8" twDestWidth="15" twPhaseWidth="11"><twSrc>Clock</twSrc><twClk2Out  twOutPad = "ALU_Result&lt;0&gt;" twMinTime = "6.626" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "14.121" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "ALU_Result&lt;1&gt;" twMinTime = "5.823" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "13.531" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "ALU_Result&lt;2&gt;" twMinTime = "6.079" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "13.944" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "ALU_Result&lt;3&gt;" twMinTime = "5.923" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "13.659" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "ALU_Result&lt;4&gt;" twMinTime = "6.365" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "14.359" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "ALU_Result&lt;5&gt;" twMinTime = "5.902" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "13.925" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "ALU_Result&lt;6&gt;" twMinTime = "5.909" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "14.011" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "ALU_Result&lt;7&gt;" twMinTime = "5.789" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "14.094" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "ALU_Result&lt;8&gt;" twMinTime = "5.697" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "14.035" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "ALU_Result&lt;9&gt;" twMinTime = "5.402" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "13.744" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "ALU_Result&lt;10&gt;" twMinTime = "5.601" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "14.014" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "ALU_Result&lt;11&gt;" twMinTime = "5.601" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "14.007" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "ALU_Result&lt;12&gt;" twMinTime = "5.755" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "14.132" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "ALU_Result&lt;13&gt;" twMinTime = "5.578" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "13.833" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "ALU_Result&lt;14&gt;" twMinTime = "5.521" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "13.867" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "ALU_Result&lt;15&gt;" twMinTime = "5.510" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "13.862" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "ALU_Result&lt;16&gt;" twMinTime = "5.699" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "14.041" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "ALU_Result&lt;17&gt;" twMinTime = "5.526" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "13.773" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "ALU_Result&lt;18&gt;" twMinTime = "5.425" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "13.712" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "ALU_Result&lt;19&gt;" twMinTime = "5.622" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "13.952" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "ALU_Result&lt;20&gt;" twMinTime = "5.416" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "13.671" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "ALU_Result&lt;21&gt;" twMinTime = "5.388" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "13.683" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "ALU_Result&lt;22&gt;" twMinTime = "5.302" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "13.536" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "ALU_Result&lt;23&gt;" twMinTime = "5.250" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "13.615" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "ALU_Result&lt;24&gt;" twMinTime = "5.105" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "13.286" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "ALU_Result&lt;25&gt;" twMinTime = "5.142" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "13.383" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "ALU_Result&lt;26&gt;" twMinTime = "5.273" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "13.642" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "ALU_Result&lt;27&gt;" twMinTime = "5.171" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "13.448" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "ALU_Result&lt;28&gt;" twMinTime = "5.384" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "13.743" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "ALU_Result&lt;29&gt;" twMinTime = "5.202" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "13.738" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "ALU_Result&lt;30&gt;" twMinTime = "5.133" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "13.616" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "ALU_Result&lt;31&gt;" twMinTime = "5.073" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "13.474" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "AN&lt;0&gt;" twMinTime = "5.332" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "9.769" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "AN&lt;1&gt;" twMinTime = "5.295" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "9.717" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "AN&lt;2&gt;" twMinTime = "5.632" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "10.357" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "AN&lt;3&gt;" twMinTime = "5.547" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "10.225" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "AN&lt;4&gt;" twMinTime = "5.732" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "10.586" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "AN&lt;5&gt;" twMinTime = "5.815" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "10.726" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "DISP_Seg&lt;0&gt;" twMinTime = "7.915" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "21.973" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "DISP_Seg&lt;1&gt;" twMinTime = "7.448" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "21.253" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "DISP_Seg&lt;2&gt;" twMinTime = "7.478" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "21.390" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "DISP_Seg&lt;3&gt;" twMinTime = "7.571" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "21.347" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "DISP_Seg&lt;4&gt;" twMinTime = "7.682" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "21.542" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "DISP_Seg&lt;5&gt;" twMinTime = "7.467" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "21.229" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "DISP_Seg&lt;6&gt;" twMinTime = "7.723" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "21.740" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Ext_imm&lt;0&gt;" twMinTime = "8.144" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "14.555" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Ext_imm&lt;1&gt;" twMinTime = "7.768" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "14.343" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Ext_imm&lt;2&gt;" twMinTime = "7.825" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "14.399" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Ext_imm&lt;3&gt;" twMinTime = "7.796" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "14.127" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Ext_imm&lt;4&gt;" twMinTime = "7.711" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "14.173" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Ext_imm&lt;5&gt;" twMinTime = "7.635" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "14.038" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Ext_imm&lt;6&gt;" twMinTime = "7.673" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "14.224" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Ext_imm&lt;7&gt;" twMinTime = "7.432" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "13.692" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Ext_imm&lt;8&gt;" twMinTime = "7.601" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "14.050" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Ext_imm&lt;9&gt;" twMinTime = "7.489" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "13.611" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Ext_imm&lt;10&gt;" twMinTime = "7.686" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "14.210" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Ext_imm&lt;11&gt;" twMinTime = "7.292" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "13.762" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Ext_imm&lt;12&gt;" twMinTime = "7.729" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "13.950" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Ext_imm&lt;13&gt;" twMinTime = "7.221" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "13.338" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Ext_imm&lt;14&gt;" twMinTime = "7.375" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "13.513" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Ext_imm&lt;15&gt;" twMinTime = "9.351" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "16.528" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Ext_imm&lt;16&gt;" twMinTime = "9.576" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "16.919" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Ext_imm&lt;17&gt;" twMinTime = "9.477" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "16.715" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Ext_imm&lt;18&gt;" twMinTime = "9.781" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "17.211" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Ext_imm&lt;19&gt;" twMinTime = "8.812" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "15.635" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Ext_imm&lt;20&gt;" twMinTime = "9.698" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "17.076" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Ext_imm&lt;21&gt;" twMinTime = "8.502" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "15.140" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Ext_imm&lt;22&gt;" twMinTime = "9.169" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "16.252" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Ext_imm&lt;23&gt;" twMinTime = "8.380" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "14.928" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Ext_imm&lt;24&gt;" twMinTime = "9.217" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "16.307" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Ext_imm&lt;25&gt;" twMinTime = "8.269" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "14.741" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Ext_imm&lt;26&gt;" twMinTime = "9.587" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "16.889" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Ext_imm&lt;27&gt;" twMinTime = "8.142" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "14.538" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Ext_imm&lt;28&gt;" twMinTime = "8.024" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "14.400" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Ext_imm&lt;29&gt;" twMinTime = "8.010" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "14.342" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Ext_imm&lt;30&gt;" twMinTime = "7.927" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "14.239" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Ext_imm&lt;31&gt;" twMinTime = "7.907" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "14.251" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Instruction&lt;0&gt;" twMinTime = "5.224" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "9.824" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Instruction&lt;1&gt;" twMinTime = "6.820" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "12.866" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Instruction&lt;2&gt;" twMinTime = "6.738" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "12.716" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Instruction&lt;3&gt;" twMinTime = "6.977" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "12.812" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Instruction&lt;4&gt;" twMinTime = "6.745" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "12.646" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Instruction&lt;5&gt;" twMinTime = "6.685" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "12.576" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Instruction&lt;6&gt;" twMinTime = "6.476" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "12.306" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Instruction&lt;7&gt;" twMinTime = "6.470" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "12.254" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Instruction&lt;8&gt;" twMinTime = "6.606" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "12.472" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Instruction&lt;9&gt;" twMinTime = "6.521" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "12.103" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Instruction&lt;10&gt;" twMinTime = "6.604" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "12.510" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Instruction&lt;11&gt;" twMinTime = "5.310" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "10.541" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Instruction&lt;12&gt;" twMinTime = "5.757" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "10.790" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Instruction&lt;13&gt;" twMinTime = "5.548" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "10.631" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Instruction&lt;14&gt;" twMinTime = "5.489" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "10.535" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Instruction&lt;15&gt;" twMinTime = "5.874" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "11.031" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Instruction&lt;16&gt;" twMinTime = "5.291" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "9.946" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Instruction&lt;17&gt;" twMinTime = "5.252" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "10.361" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Instruction&lt;18&gt;" twMinTime = "5.439" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "10.456" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Instruction&lt;19&gt;" twMinTime = "5.457" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "10.173" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Instruction&lt;21&gt;" twMinTime = "5.628" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "10.683" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Instruction&lt;22&gt;" twMinTime = "5.515" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "10.621" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Instruction&lt;26&gt;" twMinTime = "5.598" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "10.737" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Instruction&lt;27&gt;" twMinTime = "5.530" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "10.629" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Instruction&lt;28&gt;" twMinTime = "5.868" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "10.985" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Instruction&lt;29&gt;" twMinTime = "5.812" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "10.882" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Instruction&lt;31&gt;" twMinTime = "6.220" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "11.889" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "MemWr" twMinTime = "6.030" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "12.657" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "MemtoReg" twMinTime = "6.294" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "13.126" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Out1&lt;0&gt;" twMinTime = "5.423" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "11.673" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Out1&lt;1&gt;" twMinTime = "5.238" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "11.697" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Out1&lt;2&gt;" twMinTime = "5.180" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "12.026" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Out1&lt;3&gt;" twMinTime = "5.217" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "11.639" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Out1&lt;4&gt;" twMinTime = "5.324" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "12.080" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Out1&lt;5&gt;" twMinTime = "5.360" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "11.970" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Out1&lt;6&gt;" twMinTime = "5.434" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "12.762" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Out1&lt;7&gt;" twMinTime = "5.572" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "12.482" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Out1&lt;8&gt;" twMinTime = "5.506" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "12.135" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Out1&lt;9&gt;" twMinTime = "5.568" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "11.986" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Out1&lt;10&gt;" twMinTime = "5.557" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "12.358" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Out1&lt;11&gt;" twMinTime = "5.560" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "12.280" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Out1&lt;12&gt;" twMinTime = "5.589" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "12.564" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Out1&lt;13&gt;" twMinTime = "5.651" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "12.263" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Out1&lt;14&gt;" twMinTime = "5.699" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "12.855" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Out1&lt;15&gt;" twMinTime = "5.941" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "12.870" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Out1&lt;16&gt;" twMinTime = "5.791" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "12.391" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Out1&lt;17&gt;" twMinTime = "5.753" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "12.170" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Out1&lt;18&gt;" twMinTime = "5.933" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "12.581" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Out1&lt;19&gt;" twMinTime = "5.776" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "12.494" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Out1&lt;20&gt;" twMinTime = "5.960" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "12.682" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Out1&lt;21&gt;" twMinTime = "6.166" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "13.094" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Out1&lt;22&gt;" twMinTime = "6.198" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "13.203" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Out1&lt;23&gt;" twMinTime = "6.163" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "12.989" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Out1&lt;24&gt;" twMinTime = "6.074" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "13.063" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Out1&lt;25&gt;" twMinTime = "6.315" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "13.049" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Out1&lt;26&gt;" twMinTime = "6.236" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "13.208" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Out1&lt;27&gt;" twMinTime = "6.319" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "13.395" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Out1&lt;28&gt;" twMinTime = "6.374" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "14.119" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Out1&lt;29&gt;" twMinTime = "6.465" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "13.350" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Out1&lt;30&gt;" twMinTime = "6.381" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "14.417" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Out1&lt;31&gt;" twMinTime = "6.698" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "14.348" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Out2&lt;0&gt;" twMinTime = "5.755" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "12.755" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Out2&lt;1&gt;" twMinTime = "5.814" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "12.710" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Out2&lt;2&gt;" twMinTime = "5.762" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "12.621" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Out2&lt;3&gt;" twMinTime = "5.491" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "12.378" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Out2&lt;4&gt;" twMinTime = "5.409" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "12.385" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Out2&lt;5&gt;" twMinTime = "5.374" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "12.276" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Out2&lt;6&gt;" twMinTime = "5.530" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "12.857" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Out2&lt;7&gt;" twMinTime = "5.652" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "13.181" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Out2&lt;8&gt;" twMinTime = "5.577" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "12.988" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Out2&lt;9&gt;" twMinTime = "5.356" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "12.179" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Out2&lt;10&gt;" twMinTime = "5.585" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "13.123" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Out2&lt;11&gt;" twMinTime = "5.435" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "12.423" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Out2&lt;12&gt;" twMinTime = "5.514" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "12.628" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Out2&lt;13&gt;" twMinTime = "5.352" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "12.483" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Out2&lt;14&gt;" twMinTime = "5.651" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "12.575" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Out2&lt;15&gt;" twMinTime = "5.433" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "12.308" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Out2&lt;16&gt;" twMinTime = "5.443" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "12.954" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Out2&lt;17&gt;" twMinTime = "5.770" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "12.468" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Out2&lt;18&gt;" twMinTime = "5.513" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "12.270" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Out2&lt;19&gt;" twMinTime = "5.611" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "12.385" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Out2&lt;20&gt;" twMinTime = "5.673" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "12.532" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Out2&lt;21&gt;" twMinTime = "5.355" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "12.007" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Out2&lt;22&gt;" twMinTime = "5.601" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "12.325" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Out2&lt;23&gt;" twMinTime = "5.573" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "12.289" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Out2&lt;24&gt;" twMinTime = "5.712" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "12.260" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Out2&lt;25&gt;" twMinTime = "5.359" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "11.540" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Out2&lt;26&gt;" twMinTime = "6.065" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "12.775" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Out2&lt;27&gt;" twMinTime = "5.808" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "12.336" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Out2&lt;28&gt;" twMinTime = "6.023" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "12.759" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Out2&lt;29&gt;" twMinTime = "6.343" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "13.288" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Out2&lt;30&gt;" twMinTime = "5.845" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "12.303" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Out2&lt;31&gt;" twMinTime = "5.845" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "12.323" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Test_signal&lt;0&gt;" twMinTime = "6.874" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "14.415" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Test_signal&lt;1&gt;" twMinTime = "6.458" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "14.457" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Test_signal&lt;2&gt;" twMinTime = "6.759" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "14.886" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Test_signal&lt;3&gt;" twMinTime = "7.659" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "16.237" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Test_signal&lt;4&gt;" twMinTime = "6.752" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "14.853" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Test_signal&lt;5&gt;" twMinTime = "6.790" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "15.285" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Test_signal&lt;6&gt;" twMinTime = "6.645" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "15.126" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Test_signal&lt;7&gt;" twMinTime = "6.688" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "15.339" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Test_signal&lt;8&gt;" twMinTime = "6.475" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "15.213" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Test_signal&lt;9&gt;" twMinTime = "6.763" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "15.838" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Test_signal&lt;10&gt;" twMinTime = "6.256" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "14.937" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Test_signal&lt;11&gt;" twMinTime = "6.155" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "14.788" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Test_signal&lt;12&gt;" twMinTime = "6.158" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "14.687" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Test_signal&lt;13&gt;" twMinTime = "6.220" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "14.861" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Test_signal&lt;14&gt;" twMinTime = "6.212" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "14.878" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Test_signal&lt;15&gt;" twMinTime = "6.390" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "15.130" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Test_signal&lt;16&gt;" twMinTime = "6.076" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "10.726" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Test_signal&lt;17&gt;" twMinTime = "6.129" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "10.817" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Test_signal&lt;18&gt;" twMinTime = "5.791" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "10.341" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Test_signal&lt;19&gt;" twMinTime = "5.933" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "10.486" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Test_signal&lt;20&gt;" twMinTime = "5.747" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "10.277" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Test_signal&lt;21&gt;" twMinTime = "5.445" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "9.844" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Test_signal&lt;22&gt;" twMinTime = "5.376" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "9.728" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "Test_signal&lt;23&gt;" twMinTime = "5.637" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "10.102" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "addr&lt;2&gt;" twMinTime = "6.870" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "11.963" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "addr&lt;3&gt;" twMinTime = "6.959" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "12.117" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "addr&lt;4&gt;" twMinTime = "6.583" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "11.576" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "addr&lt;5&gt;" twMinTime = "6.500" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "11.376" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "addr&lt;6&gt;" twMinTime = "6.158" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "10.891" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "addr&lt;7&gt;" twMinTime = "6.311" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "11.095" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "addr&lt;8&gt;" twMinTime = "6.329" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "11.090" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "addr&lt;9&gt;" twMinTime = "6.285" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "11.067" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "addr&lt;10&gt;" twMinTime = "5.761" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "10.280" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "addr&lt;11&gt;" twMinTime = "5.707" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "10.138" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "addr&lt;12&gt;" twMinTime = "5.707" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "10.138" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "addr&lt;13&gt;" twMinTime = "5.763" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "10.275" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "addr&lt;14&gt;" twMinTime = "5.567" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "9.914" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "addr&lt;15&gt;" twMinTime = "5.509" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "9.798" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "addr&lt;16&gt;" twMinTime = "5.566" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "9.917" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "addr&lt;17&gt;" twMinTime = "5.661" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "10.144" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "addr&lt;18&gt;" twMinTime = "5.780" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "10.309" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "addr&lt;19&gt;" twMinTime = "5.895" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "10.447" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "addr&lt;20&gt;" twMinTime = "5.481" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "9.759" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "addr&lt;21&gt;" twMinTime = "5.422" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "9.695" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "addr&lt;22&gt;" twMinTime = "5.409" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "9.655" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "addr&lt;23&gt;" twMinTime = "5.337" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "9.573" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "addr&lt;24&gt;" twMinTime = "5.148" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "9.300" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "addr&lt;25&gt;" twMinTime = "5.274" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "9.442" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "addr&lt;26&gt;" twMinTime = "5.399" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "9.683" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "addr&lt;27&gt;" twMinTime = "5.431" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "9.706" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "addr&lt;28&gt;" twMinTime = "5.383" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "9.651" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "addr&lt;29&gt;" twMinTime = "5.142" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "9.226" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "addr&lt;30&gt;" twMinTime = "4.895" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "8.828" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out><twClk2Out  twOutPad = "addr&lt;31&gt;" twMinTime = "4.796" twMinCrnr="t" twMinEdge ="twRising" twMaxTime = "8.663" twMaxCrnr="f" twMaxEdge ="twRising" twInternalClk="Clock_BUFGP" twClkPhase="0.000" ></twClk2Out></twClk2OutList><twClk2SUList anchorID="9" twDestWidth="5"><twDest>Clock</twDest><twClk2SU><twSrc>Clock</twSrc><twRiseRise>9.808</twRiseRise></twClk2SU></twClk2SUList><twOffsetTables></twOffsetTables></twDataSheet></twVerboseRpt></twBody><twFoot><twTimestamp>Thu Jun 27 19:32:30 2019 </twTimestamp></twFoot><twClientInfo anchorID="10"><twClientName>Trace</twClientName><twAttrList><twAttrListItem><twName>Trace Settings</twName><twValue>
+
+Peak Memory Usage: 4629 MB
+</twValue></twAttrListItem></twAttrList></twClientInfo></twReport>

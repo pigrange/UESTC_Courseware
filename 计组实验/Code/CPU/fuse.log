@@ -1,0 +1,56 @@
+Running: D:\Tools\xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -lib secureip -o D:/Codes/Verilog/CPU/TestSOC_isim_beh.exe -prj D:/Codes/Verilog/CPU/TestSOC_beh.prj work.TestSOC work.glbl 
+ISim P.20131013 (signature 0x7708f090)
+Number of CPUs detected in this system: 4
+Turning on mult-threading, number of parallel sub-compilation jobs: 8 
+Determining compilation order of HDL files
+Analyzing Verilog file "D:/Codes/Verilog/CPU/PC.v" into library work
+Analyzing Verilog file "D:/Codes/Verilog/CPU/MUX_32_4_1.v" into library work
+Analyzing Verilog file "D:/Codes/Verilog/CPU/Left2Shifter.v" into library work
+Analyzing Verilog file "D:/Codes/Verilog/CPU/JointAddr.v" into library work
+Analyzing Verilog file "D:/Codes/Verilog/CPU/Control.v" into library work
+Analyzing Verilog file "D:/Codes/Verilog/CPU/ALUop.v" into library work
+Analyzing Verilog file "D:/Codes/Verilog/CPU/ADD32.v" into library work
+Analyzing Verilog file "D:/Codes/Verilog/CPU/RegFile.v" into library work
+Analyzing Verilog file "D:/Codes/Verilog/CPU/MUX_32_2_1.v" into library work
+Analyzing Verilog file "D:/Codes/Verilog/CPU/MUX5_2_1.v" into library work
+Analyzing Verilog file "D:/Codes/Verilog/CPU/Fetch.v" into library work
+Analyzing Verilog file "D:/Codes/Verilog/CPU/Extender.v" into library work
+Analyzing Verilog file "D:/Codes/Verilog/CPU/Control_Unit.v" into library work
+Analyzing Verilog file "D:/Codes/Verilog/CPU/ALU.v" into library work
+Analyzing Verilog file "D:/Codes/Verilog/CPU/MIPS_CPU.v" into library work
+Analyzing Verilog file "D:/Codes/Verilog/CPU/INST_MEM.v" into library work
+Analyzing Verilog file "D:/Codes/Verilog/CPU/Hex7seg_decode.v" into library work
+Analyzing Verilog file "D:/Codes/Verilog/CPU/DATA_MEM.v" into library work
+Analyzing Verilog file "D:/Codes/Verilog/CPU/SOC.v" into library work
+Analyzing Verilog file "D:/Codes/Verilog/CPU/TestSOC.v" into library work
+Analyzing Verilog file "D:/Tools/xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
+Starting static elaboration
+WARNING:HDLCompiler:189 - "D:/Codes/Verilog/CPU/Control_Unit.v" Line 35: Size mismatch in connection of port <R_type>. Formal port size is 3-bit while actual signal size is 1-bit.
+Completed static elaboration
+Compiling module Hex7seg_decode
+Compiling module DATA_MEM
+Compiling module MUX32_2_1
+Compiling module INST_ROM
+Compiling module Left_2_Shifter
+Compiling module ADD32
+Compiling module Joint_Addr
+Compiling module MUX32_4_1
+Compiling module PC
+Compiling module Fetch
+Compiling module Control
+Compiling module ALUop
+Compiling module Control_Unit
+Compiling module MUX5_2_1
+Compiling module RegFile
+Compiling module Extender
+Compiling module ALU
+Compiling module MIPS_CPU
+Compiling module SOC
+Compiling module TestSOC
+Compiling module glbl
+Time Resolution for simulation is 1ps.
+Waiting for 14 sub-compilation(s) to finish...
+Compiled 21 Verilog Units
+Built simulation executable D:/Codes/Verilog/CPU/TestSOC_isim_beh.exe
+Fuse Memory Usage: 29360 KB
+Fuse CPU Usage: 1000 ms

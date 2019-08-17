@@ -1,0 +1,107 @@
+--------------------------------------------------------------------------------
+Release 14.7 Trace  (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+D:\Tools\xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\trce.exe -intstyle ise -v 3
+-s 3 -n 3 -fastpaths -xml Control_Unit.twx Control_Unit.ncd -o Control_Unit.twr
+Control_Unit.pcf
+
+Design file:              Control_Unit.ncd
+Physical constraint file: Control_Unit.pcf
+Device,package,speed:     xc6slx45,csg484,C,-3 (PRODUCTION 1.23 2013-10-13)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:2698 - No timing constraints found, doing default enumeration.
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Pad to Pad
+---------------+---------------+---------+
+Source Pad     |Destination Pad|  Delay  |
+---------------+---------------+---------+
+func<1>        |ALU_ctr<2>     |    6.726|
+op<0>          |ALUSrc         |    8.150|
+op<0>          |ALU_ctr<1>     |    6.743|
+op<0>          |ALU_ctr<2>     |    8.422|
+op<0>          |Branch         |    6.991|
+op<0>          |Jump           |    6.439|
+op<0>          |MemWrite       |    6.585|
+op<0>          |MemtoReg       |    6.331|
+op<0>          |RegDst         |    6.455|
+op<0>          |RegWrite       |    8.317|
+op<1>          |ALUSrc         |    8.063|
+op<1>          |ALU_ctr<1>     |    6.766|
+op<1>          |ALU_ctr<2>     |    8.220|
+op<1>          |Branch         |    6.642|
+op<1>          |Jump           |    6.610|
+op<1>          |MemWrite       |    6.856|
+op<1>          |MemtoReg       |    6.288|
+op<1>          |RegDst         |    6.722|
+op<1>          |RegWrite       |    8.274|
+op<2>          |ALUSrc         |    7.994|
+op<2>          |ALU_ctr<1>     |    6.498|
+op<2>          |ALU_ctr<2>     |    8.527|
+op<2>          |Branch         |    6.765|
+op<2>          |Jump           |    6.291|
+op<2>          |MemWrite       |    6.654|
+op<2>          |MemtoReg       |    6.230|
+op<2>          |RegDst         |    6.716|
+op<2>          |RegWrite       |    8.216|
+op<3>          |ALUSrc         |    6.753|
+op<3>          |ALU_ctr<1>     |    6.586|
+op<3>          |ALU_ctr<2>     |    8.255|
+op<3>          |Branch         |    6.252|
+op<3>          |Jump           |    6.670|
+op<3>          |MemWrite       |    6.568|
+op<3>          |MemtoReg       |    6.241|
+op<3>          |RegDst         |    6.300|
+op<3>          |RegWrite       |    8.227|
+op<4>          |ALUSrc         |    6.739|
+op<4>          |ALU_ctr<1>     |    6.288|
+op<4>          |ALU_ctr<2>     |    8.576|
+op<4>          |Branch         |    6.038|
+op<4>          |Jump           |    6.481|
+op<4>          |MemWrite       |    6.835|
+op<4>          |MemtoReg       |    6.227|
+op<4>          |RegDst         |    6.416|
+op<4>          |RegWrite       |    8.213|
+op<5>          |ALUSrc         |    6.688|
+op<5>          |ALU_ctr<1>     |    6.654|
+op<5>          |ALU_ctr<2>     |    8.001|
+op<5>          |Branch         |    6.246|
+op<5>          |Jump           |    6.842|
+op<5>          |MemWrite       |    6.652|
+op<5>          |MemtoReg       |    6.176|
+op<5>          |RegDst         |    6.974|
+op<5>          |RegWrite       |    8.162|
+---------------+---------------+---------+
+
+
+Analysis completed Fri Jun 28 16:04:45 2019 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 4627 MB
+
+
+
