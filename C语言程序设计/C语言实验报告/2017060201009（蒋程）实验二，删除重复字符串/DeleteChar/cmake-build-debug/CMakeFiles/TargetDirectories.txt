@@ -1,0 +1,3 @@
+D:/Learn/CLanguange/DeleteChar/cmake-build-debug/CMakeFiles/DeleteChar.dir
+D:/Learn/CLanguange/DeleteChar/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/Learn/CLanguange/DeleteChar/cmake-build-debug/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,3 @@
+D:/Learn/CLanguange/MAP_1/cmake-build-debug/CMakeFiles/MAP_1.dir
+D:/Learn/CLanguange/MAP_1/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/Learn/CLanguange/MAP_1/cmake-build-debug/CMakeFiles/rebuild_cache.dir

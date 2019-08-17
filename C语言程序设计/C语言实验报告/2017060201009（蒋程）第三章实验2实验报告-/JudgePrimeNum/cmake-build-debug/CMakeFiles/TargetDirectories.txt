@@ -1,0 +1,3 @@
+D:/Learn/CLanguange/JudgePrimeNum/cmake-build-debug/CMakeFiles/JudgePrimeNum.dir
+D:/Learn/CLanguange/JudgePrimeNum/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/Learn/CLanguange/JudgePrimeNum/cmake-build-debug/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,11 @@
+"D:\C programing\CLion 2017.3.4\bin\cmake\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" D:\Learn\CLanguange\JudgePrimeNum
+-- The C compiler identification is GNU 6.3.0
+-- Check for working C compiler: C:/MinGW/bin/gcc.exe
+-- Check for working C compiler: C:/MinGW/bin/gcc.exe -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Configuring done
+-- Generating done
+-- Build files have been written to: D:/Learn/CLanguange/JudgePrimeNum/cmake-build-debug

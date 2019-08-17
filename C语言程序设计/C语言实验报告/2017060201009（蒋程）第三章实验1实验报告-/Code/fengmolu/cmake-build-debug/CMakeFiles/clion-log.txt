@@ -1,0 +1,4 @@
+"D:\C programing\CLion 2017.3.4\bin\cmake\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" D:\Learn\C\fengmolu
+-- Configuring done
+-- Generating done
+-- Build files have been written to: D:/Learn/C/fengmolu/cmake-build-debug

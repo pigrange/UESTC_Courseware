@@ -1,0 +1,4 @@
+1.开始后请设置点阵字体
+2.若看不了.md（Readme),请登陆
+https://github.com/pigrange/Fengmolu-unfinished 
+查看readme。

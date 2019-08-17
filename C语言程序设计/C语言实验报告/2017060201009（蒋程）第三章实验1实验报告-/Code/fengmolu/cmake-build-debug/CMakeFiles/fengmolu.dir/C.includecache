@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+D:/Learn/C/fengmolu/gameFunctions.c
+stdio.h
+-
+stdlib.h
+-
+conio.h
+-
+windows.h
+-
+
+D:/Learn/C/fengmolu/gameFunctions.h
+
+D:/Learn/C/fengmolu/main.c
+stdio.h
+-
+gameFunctions.h
+D:/Learn/C/fengmolu/gameFunctions.h
+
