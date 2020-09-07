@@ -1,0 +1,11 @@
+cr x 1
+cr y 1
+req R2 2
+to
+cr z 1
+cr m 1
+req R1 1
+to
+req R2 2
+de x
+to
