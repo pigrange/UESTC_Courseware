@@ -1,0 +1,10 @@
+init x x x x p p q q r r x p q r x x x p x
+init A A A B B B C C C C A D D E E B F C C D D E F A A C F A
+init A A A A B B B E C A D B E C A C
+init A A A B B B B C A D D D E E F F F B C A G D A A H H I H C A A C
+init x x x x p q r r x x p p q r r x p q r
+init a a a a b b b c d a e f b e c d a c d a
+init a a b b b a a c d d b a a a
+init z z z x x x c z v x x c v z c
+init a a s s s s a d f s a a a
+init x x x y y y y x z init init
